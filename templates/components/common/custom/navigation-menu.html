@@ -1,0 +1,121 @@
+<nav class="navPages"> 
+        <div class="navPages-quickSearch" style="display:none;">
+            {{> components/common/quick-search}}
+        </div>
+        <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">            
+            <li class="navPages-item navPages-item-page">
+                <a class="navPages-action{{#if name '==' ../page.title}} activePage{{/if}}" href="#">Get Started</a>
+            </li>
+            
+            <li class="navPages-item navPages-item-page">
+                <!-- <a class="navPages-action{{#if name '==' ../page.title}} activePage{{/if}}" href="#">Products</a> -->
+                <div class="dropdown-mobile">
+                        <button class="dropbutn">Products</button>
+                        <div class="dropdown-mobile-content">
+                            <div class="mobile">
+                                <ul>
+                                    <li>
+                                        <a href="#">Shave</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Face</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Body</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gifts & Kits</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </li>
+            
+            <li class="navPages-item navPages-item-page">
+                <!-- <a class="navPages-action{{#if name '==' ../page.title}} activePage{{/if}}" href="#">Learn</a> -->
+                <div class="dropdown-mobile">
+                    <button class="dropbutn">Learn</button>
+                    <div class="dropdown-mobile-content">
+                        <div class="mobile">
+                            <ul>
+                                <li>
+                                    <a href="#">How-To</a>
+                                </li>
+                                <li>
+                                    <a href="#">Styling</a>
+                                </li>
+                                <li>
+                                    <a href="#">Shaving Science</a>
+                                </li>
+                                <li>
+                                    <a href="#">Beard & Personal Care</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="navPages-item navPages-item-page">
+                <!-- <a class="navPages-action{{#if name '==' ../page.title}} activePage{{/if}}" href="#">About</a> -->
+                <div class="dropdown-mobile">
+                        <button class="dropbutn">About</button>
+                        <div class="dropdown-mobile-content">
+                            <div class="mobile">
+                                <ul>
+                                    <li>
+                                        <a href="#">Our Story</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Giving Back</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">The Best Man Can Be</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">FAQ & Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </li>
+        </ul>
+        <div class="bottom-nav">
+            <div class="account">
+                    <a class="navPages-action" href="{{urls.auth.login}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <g fill="none" fill-rule="evenodd">
+                            <path fill-rule="nonzero" d="M0 0h24v24H0z"/>
+                            <path fill="#182F6E" d="M5.722 19.786A10.025 10.025 0 0 0 12 22a9.894 9.894 0 0 0 6.274-2.211A10.003 10.003 0 0 0 11.232 2.03a10 10 0 0 0-5.51 17.756zM12 4.332c3.062-.001 5.856 1.62 7.195 4.173 1.339 2.554.988 5.593-.903 7.826-.492-1.886-3.122-3.328-6.292-3.328-3.172 0-5.8 1.442-6.292 3.329-1.891-2.234-2.241-5.273-.902-7.827C6.145 5.951 8.938 4.331 12 4.332zm.746 7.581a3.249 3.249 0 1 0-1.493-6.324 3.249 3.249 0 0 0 1.493 6.324z"/>
+                        </g>
+                    </svg>
+                    <span>My Account</span></a>
+            </div>
+            <div class="mSearch">
+                <a class="navPages-action" href="javascript:void(0);" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="show" width="24" height="24" viewBox="0 0 24 24">
+                        <g fill="none" fill-rule="evenodd">
+                            <path d="M0 0h24v24H0z"/>
+                            <path fill="#182F6E" d="M16.165 14.377l5.59 5.589c.893.919-.87 2.682-1.79 1.788l-5.588-5.589c-3.08 2.21-7.378 1.888-10.086-.82a7.811 7.811 0 0 1 0-11.054 7.811 7.811 0 0 1 11.054 0c2.708 2.708 3.03 7.005.82 10.086zM5.675 5.676c-2.234 2.26-2.234 5.894 0 8.128 2.262 2.261 5.895 2.261 8.13 0 2.26-2.234 2.26-5.867 0-8.128-2.235-2.235-5.868-2.235-8.13 0z"/>
+                        </g>
+                    </svg>
+                    <span class="show">Search</span>
+                    <?xml version="1.0"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="hide" id="Capa_1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 357 357" style="enable-background:new 0 0 357 357;width: 24px; height: 24px;" xml:space="preserve" class=""><g><g>
+                        <g id="close">
+                            <polygon points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3     214.2,178.5   " data-original="#000000" class="active-path" data-old_color="#182f6e" fill="#182f6e"/>
+                        </g>
+                    </g></g> </svg>
+
+                    <span class="hide">Close</span>
+                    <div class="hidden-space"></div>
+                </a>
+                <div class="mobile-search">
+                        {{> components/common/custom/m-quick-search}}
+                </div>
+            </div>
+        </div>
+    </nav>
+    

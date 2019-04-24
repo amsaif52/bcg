@@ -1,0 +1,70 @@
+@import "clear-sans";
+
+$fonts: $fontFamily-sans $fontFamily-serif $fontFamily-mono $fontFamily-headings $fontFamily-hero;
+
+@if contains($fonts, "'Clear Sans', sans-serif") {
+    @include clear-sans;
+}
+
+@font-face {
+    font-family: 'lato_blackregular';
+    src: url('../fonts/gillette-us/lato-black-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-black-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'lato_blackitalic';
+    src: url('../fonts/gillette-us/lato-blackitalic-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-blackitalic-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'latobold';
+    src: url('../fonts/gillette-us/lato-bold-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-bold-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'latobold_italic';
+    src: url('../fonts/gillette-us/lato-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-bolditalic-webfont.woff') format('woff');}
+
+@font-face {
+    font-family: 'lato_hairlineregular';
+    src: url('../fonts/gillette-us/lato-hairline-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-hairline-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'lato_hairlineitalic';
+    src: url('../fonts/gillette-us/lato-hairlineitalic-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-hairlineitalic-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'latoitalic';
+    src: url('../fonts/gillette-us/lato-italic-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-italic-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'lato_lightregular';
+    src: url('../fonts/gillette-us/lato-light-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-light-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'lato_lightitalic';
+    src: url('../fonts/gillette-us/lato-lightitalic-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-lightitalic-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/gillette-us/lato-regular-webfont.woff2') format('woff2'),
+         url('../fonts/gillette-us/lato-regular-webfont.woff') format('woff');
+}
+
+* {
+    font-family: 'latoregular', 'Arial', sans-serif;
+  }

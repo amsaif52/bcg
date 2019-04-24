@@ -1,0 +1,79 @@
+{{inject "myProductName" category}}
+
+<script>
+// Note the lack of quotes around the jsContext handlebars helper, it becomes a string automatically.
+var jsContext = JSON.parse({{jsContext}}); // jsContext would output "{\"myProductName\": \"Sample Product\"}" which can feed directly into your JavaScript
+
+console.log(jsContext.myProductName); // Will output: Sample Product
+</script>
+{{#partial "page"}}
+<div class="redesignCategory">
+    <section class="bckg">
+        <div class="text">
+            <div class="title">
+                Tools For Your Best Shave
+            </div>
+        </div>
+    </section>
+    <section class="featureCategoryProducts">
+        {{#each category.products}}
+            <div class="product">
+                <div>
+                    <div class="title">
+                        {{#each custom_fields}}
+                            {{#if name '==' "Name"}}
+                                {{value}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                    <div class="image">
+                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                    </div>
+                    <div class="name">
+                        {{name}}
+                    </div>
+                    {{#if show_cart_action}}
+                    <div class="price">
+                        <div class="now">
+                            ${{price.sale_price_without_tax.value}}
+                        </div>
+                        <div class="was">
+                            ${{price.non_sale_price_without_tax.value}}
+                        </div>
+                    </div>
+                    {{/if}}
+                    <div class="action">
+                        {{#if show_cart_action}}
+                            <button class="blue">
+                                <span>subscribe</span>
+                            </button>
+                            <button class="link">
+                                One Time Purchase
+                            </button>
+                        {{else}}
+                            <button class="blue">
+                                <span>Shop Online</span>
+                            </button>
+                        {{/if}}
+                    </div>
+                    <div class="description">
+                        {{summary}}
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </section>
+    <a class="viewall">
+        <span>
+            View All Products
+        </span>
+    </a>
+    <section class="featureCategoryCompare">
+        
+    </section>
+    <section class="featureCategoryReviews">
+        
+    </section>
+</div>
+{{/partial}}
+{{> layout/base}}

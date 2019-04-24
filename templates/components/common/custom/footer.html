@@ -1,0 +1,45 @@
+<footer class="footer footer-gilletteUs" role="contentinfo">
+    <div class="container-gilletteUs">
+        <div class="left">
+            <ul class="navigation">
+                <li>
+                    <a href="/termsandconditions">Terms and Conditions</a>
+                </li>
+                <li>
+                    <a href="/privacynotice">Privacy Notice</a>
+                </li>
+                <li>
+                    <a href="/sitemap">Sitemap</a>
+                </li>
+                <li>
+                    <a href="/aboutcookies">About Cookies</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="first">
+                <div>&copy; {{moment format="YYYY"}} <br class="forMobile" />Procter & Gamble</div>
+                {{#if social_media}}
+                <ul class="social-links">
+                    {{#each social_media}}
+                    <li class="social-links">
+                        <a href={{url}} target="_blank" class="{{display_name}}"></a>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+            <div class="adchoice">
+                <a id="_bapw-link" href="#" target="_blank" style="text-decoration:none !important"><img id="_bapw-icon" style="border:0 !important;display:inline !important;vertical-align:middle !important;padding-right:5px !important;"/><span>AdChoices</span></a>
+                <script type="text/javascript">
+                    (function() {
+                        const adChoiceID = localStorage.getItem('siteLanguage') == 'fr' ? 8136 : 8875; //fr//en
+                        var ev = document.createElement('script'); ev.type = 'text/javascript'; ev.async = true; ev.setAttribute('data-ev-tag-pid', adChoiceID); ev.setAttribute('data-ev-tag-ocid', 2014);
+                        ev.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/pub/tag.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ev, s);
+                    })();
+                </script>
+            </div>
+        </div>
+    </div>
+</footer>

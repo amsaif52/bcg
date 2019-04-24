@@ -1,0 +1,133 @@
+.footer.footer-gilletteUs{
+    background-color: #efefef;
+    padding: 30px 0;
+    .container-gilletteUs{
+        max-width: 1220px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 30px;
+        @media screen and (max-width: 414px){
+            padding: 0 10px;
+        }
+        .left{
+            .navigation{
+                list-style: none;
+                margin-bottom: 0;
+                li {
+                    &:before {
+                        content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+                        color: #182f6e; /* Change the color */
+                        font-weight: bold; /* If you want it to be bold */
+                        display: inline-block; /* Needed to add space between the bullet and the text */ 
+                        width: 1em; /* Also needed for space (tweak if needed) */
+                        margin-left: -1em; /* Also needed for space (tweak if needed) */
+                    }
+                    a{
+                        font-size: 14px;
+                        line-height: 1.57;
+                        color: #182f6e;
+                        text-decoration: none;
+                        vertical-align: middle;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .right{
+            .first{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                @media screen and (max-width: 800px){
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                div{
+                    font-size: 14px;
+                    line-height: 1.43;
+                    color: #182f6e;
+                    margin-right: 25px;
+                    @media screen and (max-width: 800px){
+                        margin: 0;
+                        text-align: center;
+                    }
+                    .forMobile{
+                        display: none;
+                        @media screen and (max-width: 414px){
+                            display: inline;
+                        }
+                    }
+                }
+                .social-links{
+                    list-style: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0;
+                    li {
+                        a{
+                            text-decoration: none;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: 30px;
+                            width: 30px;
+                            height: 30px;
+                            &.facebook{
+                                background-image: url('../img/icons/facebook.svg');
+                            }
+                            
+                            &.twitter{
+                                background-image: url('../img/icons/twitter.svg');
+                            }
+                            
+                            &.instagram{
+                                background-image: url('../img/icons/instagram.svg');
+                            }
+                        }
+                        &:not(:last-child) a{
+                            margin-right: 25px;
+                        }
+                    }                    
+                    @media screen and (max-width: 800px){
+                        margin-top: 20px;
+                        li {
+                            margin-top: 0;
+                            a{
+                            background-size: 17px;
+                            width: 17px;
+                            text-decoration: none;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            height: 17px;
+                            }
+                        }
+                    }
+                }
+            }
+            .adchoice{
+                margin-top: 20px;
+                display: flex;
+                justify-content: flex-end;  
+                a{
+                    border-radius: 100px;
+                    border: solid 1px #d1d3d4;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    padding: 3px 12px;
+                    span{
+                        color: #000;
+                    }
+                }
+                @media screen and (max-width: 800px){
+                    margin-top: 20px;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
