@@ -52,7 +52,7 @@ const pageClasses = {
     wishlists: () => import('./theme/wishlist'),
     custom_header_scripts: () => import('./theme/custom/global/headerScripts'),
     pages_custom_page_redesign_home: () => import('./theme/custom/redesign-home'),
-    pages_custom_category_redesign_shave: () => import('./theme/custom/redesign-shave'),
+    pages_custom_category_redesign_indi_category: () => import('./theme/custom/redesign-indi-category'),
 };
 
 // const customClasses = {};
@@ -81,7 +81,6 @@ window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null
                     const PageClass = (await pageClassImporter()).default;
                     PageClass.load(context);
                 }
-                
                 if ((pageType === 'page' || pageType === 'category') && context.template) {
                     const mightBeTemplatePage = context.template.replace(new RegExp('/', 'g'), '_').replace(new RegExp('\\\\', 'g'), '_').replace(new RegExp('-', 'g'), '_');
                     const customPageClassImporter = pageClasses[mightBeTemplatePage];

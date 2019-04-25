@@ -24,7 +24,7 @@ export default class Page extends PageManager {
                     slidesToScroll: 1,
                     arrows: true,
                     dots: false,
-                    focusOnSelect: true
+                    focusOnSelect: true,
                 });
             }
         });

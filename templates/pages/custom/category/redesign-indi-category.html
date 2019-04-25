@@ -1,0 +1,158 @@
+{{inject "myProductName" category}}
+
+<script>
+// Note the lack of quotes around the jsContext handlebars helper, it becomes a string automatically.
+var jsContext = JSON.parse({{jsContext}}); // jsContext would output "{\"myProductName\": \"Sample Product\"}" which can feed directly into your JavaScript
+
+console.log(jsContext.myProductName); // Will output: Sample Product
+</script>
+{{#partial "page"}}
+<div class="redesignCategory">
+    <section class="bckg">
+        <div class="text">
+            <div class="title">
+                Tools For Your Best Shave
+            </div>
+        </div>
+    </section>
+    <section class="featureCategoryProducts">
+        {{#each category.products}}
+            <div class="product">
+                <div>
+                    <div class="title">
+                        {{#each custom_fields}}
+                            {{#if name '==' "Name"}}
+                                {{value}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                    <div class="image">
+                        {{#each custom_fields}}
+                            {{#if name '==' 'Free Shipping'}}
+                                {{#if value '==' 'True'}}
+                                    <div class="freeShipping">
+                                        <span>Ships FREE</span>
+                                    </div>
+                                {{/if}}
+                            {{/if}}
+                        {{/each}}
+                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                    </div>
+                    <div class="name">
+                        {{name}}
+                    </div>
+                    {{#if show_cart_action}}
+                    <div class="price">
+                        <div class="now">
+                            ${{price.sale_price_without_tax.value}}
+                        </div>
+                        <div class="was">
+                            ${{price.non_sale_price_without_tax.value}}
+                        </div>
+                    </div>
+                    {{/if}}
+                    <div class="action">
+                        {{#if show_cart_action}}
+                            <button class="blue">
+                                <span>subscribe</span>
+                            </button>
+                            <button class="link">
+                                One Time Purchase
+                            </button>
+                        {{else}}
+                            <button class="blue">
+                                <span>Shop Online</span>
+                            </button>
+                        {{/if}}
+                    </div>
+                    <div class="description">
+                        {{summary}}
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </section>
+    <a class="viewall">
+        <span>
+            View All Products
+        </span>
+    </a>
+    <section class="featureCategoryCompare">
+        <div class="title">
+                Compare the Blades
+        </div>
+        <div class="horizontalTable">
+            <div class="horizontalScrollTable">
+                <div class="cfowXY">
+                    <div class="kawPbw">Specs</div>
+                    <div class="byIoxD">
+                        <div class="ddCSV">Blades</div>
+                        <div class="ddCSV">Lubrication</div>
+                        <div class="ddCSV">Flexball Technology</div>
+                        <div class="ddCSV">Precision Trimmer</div>
+                        <div class="ddCSV">Free Shipping</div>
+                    </div>
+                </div>
+                <div class="cfowXY">
+                    <div class="kawPbw">Sensor3</div>
+                    <div class="byIoxD">
+                        <div class="ddCSV">3</div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-check.svg'}}" alt="check"/>
+                        </div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-close.svg'}}" alt="close"/>
+                        </div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-close.svg'}}" alt="close"/>
+                        </div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-close.svg'}}" alt="close"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="cfowXY">
+                    <div class="kawPbw">Mach3</div>
+                    <div class="byIoxD">
+                        <div class="ddCSV">3</div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-check.svg'}}" alt="check"/>
+                        </div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-close.svg'}}" alt="close"/>
+                        </div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-close.svg'}}" alt="close"/>
+                        </div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-check.svg'}}" alt="check"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="cfowXY">
+                    <div class="kawPbw">Proshield</div>
+                    <div class="byIoxD">
+                        <div class="ddCSV">5</div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-check.svg'}}" alt="check"/>
+                        </div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-check.svg'}}" alt="check"/>
+                        </div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-check.svg'}}" alt="check"/>
+                        </div>
+                        <div class="ddCSV">
+                            <img src="{{cdn 'img/gil/ic-check.svg'}}" alt="check"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="featureCategoryReviews">
+        
+    </section>
+</div>
+{{/partial}}
+{{> layout/base}}
