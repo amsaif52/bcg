@@ -19,14 +19,14 @@ console.log(jsContext.myProductName); // Will output: Sample Product
         {{#each category.products}}
             <div class="product">
                 <div>
-                    <div class="title">
+                    <a class="title" href="{{url}}">
                         {{#each custom_fields}}
                             {{#if name '==' "Name"}}
                                 {{value}}
                             {{/if}}
                         {{/each}}
-                    </div>
-                    <div class="image">
+                    </a>
+                    <a class="image" href="{{url}}">
                         {{#each custom_fields}}
                             {{#if name '==' 'Free Shipping'}}
                                 {{#if value '==' 'True'}}
@@ -37,7 +37,7 @@ console.log(jsContext.myProductName); // Will output: Sample Product
                             {{/if}}
                         {{/each}}
                         <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
-                    </div>
+                    </a>
                     <div class="name">
                         {{name}}
                     </div>
@@ -47,7 +47,7 @@ console.log(jsContext.myProductName); // Will output: Sample Product
                             ${{price.sale_price_without_tax.value}}
                         </div>
                         <div class="was">
-                            ${{price.non_sale_price_without_tax.value}}
+                            ${{price.rrp_without_tax.value}}
                         </div>
                     </div>
                     {{/if}}
@@ -66,7 +66,11 @@ console.log(jsContext.myProductName); // Will output: Sample Product
                         {{/if}}
                     </div>
                     <div class="description">
-                        {{summary}}
+                        {{#each custom_fields}}
+                            {{#if name '==' 'Category Text'}}
+                                {{{value}}}
+                            {{/if}}
+                        {{/each}}
                     </div>
                 </div>
             </div>
@@ -153,6 +157,9 @@ console.log(jsContext.myProductName); // Will output: Sample Product
     <section class="featureCategoryReviews">
         
     </section>
+    <div class="disclaimer">
+        * For your first year as a first-time customer, with subscription and delivery every 3 months, shipping and handling (Sensor3 Disposables) not included
+    </div>
 </div>
 {{/partial}}
 {{> layout/base}}

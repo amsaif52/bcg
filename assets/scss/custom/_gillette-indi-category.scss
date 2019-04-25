@@ -82,14 +82,19 @@
                     color: #282829;
                     padding-bottom: 50px;
                     min-height: 88px;
+                    display: block;
+                    text-decoration: none;
                 }
                 .image{
                     padding-bottom: 30px;
                     max-height: 280px;
                     height: 100%;
                     position: relative;
+                    display: block;
+                    text-decoration: none;
                     img{
                         width: 100%;
+                        outline: none;
                         height: 100%;
                     }
                     .freeShipping{
@@ -125,7 +130,7 @@
                     align-items: center;
                     padding-bottom: 30px;
                     .now{
-                        flex: 0 1 70px;
+                        flex: 0 1 60px;
                         font-family: 'lato_blackregular', 'arial', 'sans-serif';
                         font-size: 24px;
                         line-height: 1.08;
@@ -179,6 +184,28 @@
                         text-decoration: underline;
                         width: 100%;
                         text-align: left;
+                        &:hover{
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .description{
+                    .text{
+                        font-family: 'lato_blackregular', 'arial', 'sans-serif';
+                        font-size: 16px;
+                        line-height: 1.19;
+                        letter-spacing: normal;
+                        color: #182f6e;
+                        margin-bottom: 10px;
+                    }
+                    ul{
+                        margin-bottom: 0;
+                        li{
+                            font-size: 14px;
+                            line-height: 1.43;
+                            letter-spacing: normal;
+                            color: #282829;
+                        }
                     }
                 }
             }
@@ -212,7 +239,7 @@
     }
     .featureCategoryCompare{
         overflow-x: auto;
-        max-width: 980px;
+        max-width: 1180px;
         margin: 0 auto 100px;
         .title{
             font-family: 'lato_blackregular', 'arial', 'sans-serif';
@@ -229,12 +256,15 @@
                 display: flex;
                 flex-direction: row;
                 overflow-x: auto;
-                margin: 0px 0px 0px 245px;
+                margin: 0px 0px 0px 295px;
                 padding: 0px 0px 7px;
                 
                 & .cfowXY::first-child .byIoxD .ddvCSV{
                     justify-content: flex-start;
                     padding: 25px 0;
+                }
+                @media screen and (max-width: 800px){
+                    margin: 0 0 0 200px;
                 }
             }
             .cfowXY {
@@ -248,7 +278,7 @@
                     flex: 1 1 auto;
                 }
                 &:first-child {
-                    width: 245px;
+                    width: 295px;
                     text-align: left;
                     position: absolute;
                     left: 0px;
@@ -257,8 +287,9 @@
                     margin: 5px 0px 0;
                     overflow: hidden;
                     @media screen and (max-width: 800px){
-                        height: calc(100% - 26px);
-                        margin: 2px 0px -4px;
+                        height: calc(100% - 11px);
+                        margin: 4px 0px -4px;
+                        width: 200px;
                     }
                     .byIoxD > div{
                         justify-content: flex-start;
@@ -329,5 +360,14 @@
                 color: #808285;
             }
         }
+    }
+    .disclaimer{
+        font-size: 14px;
+        line-height: 1.43;
+        letter-spacing: normal;
+        color: #808285;
+        max-width: 1250px;
+        margin: 50px auto;
+        padding: 0 35px;
     }
 }
