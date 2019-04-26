@@ -9,10 +9,9 @@ export default class Page extends PageManager {
     makeAccordion() {
         $('.accordion').on('click', (e) => {
             const $panel = $(e.currentTarget).parent().find('.panel');
-            const panelHeight = $panel.innerHeight();
             if ($(e.currentTarget).hasClass('active')) {
                 $(e.currentTarget).removeClass('active');
-                $panel.css('max-height','0%');
+                $panel.css('max-height', '0%');
             } else {
                 $(e.currentTarget).addClass('active');
                 $panel.css('max-height', '100%');
