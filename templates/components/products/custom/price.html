@@ -25,14 +25,14 @@
                 ${{price.rrp_without_tax.value}}
             </span>
         </div>
-        <div class="freeShipping">
             {{#each custom_fields}}
                 {{#if name '==' 'Free Shipping'}}
                     {{#if value '==' 'True'}}
+                    <div class="freeShipping desktoponly">
                         <span>Ships FREE</span>
+                    </div>
                     {{/if}}
                 {{/if}}
             {{/each}}
-        </div>
     {{/if}}
     
