@@ -1,0 +1,196 @@
+.productView.redesign{
+    margin: 80px auto 0;
+    max-width: 1180px;
+    section.productView-details{
+        .productView-product{
+            border: none;
+            padding: 0;
+            .productView-brand{
+                span{
+                    font-family: 'lato_blackregular', 'Arial', sans-serif;
+                    font-size: 16px;
+                    line-height: 1.19;
+                    letter-spacing: normal;
+                    color: #808285;
+                }
+                margin: 0;
+            }
+            .productView-rating{
+                margin-bottom: 20px;
+            }
+            .productViewPoint{
+                margin-bottom: 50px;
+                ul{
+                    li{
+                        font-family: 'lato_blackregular', 'Arial', sans-serif;
+                        font-size: 16px;
+                        line-height: 1.19;
+                        letter-spacing: normal;
+                        color: #182f6e;
+                    }
+                }
+            }
+            .productView-title{
+                font-family: 'lato_blackregular', 'Arial', sans-serif;
+                font-size: 30px;
+                line-height: 1.13;
+                letter-spacing: normal;
+                color: #282829;
+                margin: 0 0 20px 0;
+            }
+            .productView-price{
+                display: flex;
+                flex-direction: row;
+                .price-section--withoutTax {
+                    flex: 0 1 60px;
+                    span{
+                        font-family: 'lato_blackregular', 'Arial', sans-serif;
+                        font-size: 24px;
+                        line-height: 1.08;
+                        letter-spacing: normal;
+                        color: #182f6e;
+                    }
+                }
+                .price-section--withoutTax.rrp-price--withoutTax {
+                    flex: 0 1 60px;
+                    span{
+                        font-family: 'lato_blackregular', 'Arial', sans-serif;
+                        font-size: 24px;
+                        line-height: 1.08;
+                        letter-spacing: normal;
+                        color: #808285;
+                    }                
+                }
+                .freeShipping{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span{
+                        font-family: 'latobold_italic', 'arial', sans-serif;
+                        padding: 3px 20px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .action{
+            margin-bottom: 50px;
+            button.blue{
+                background-color: #182f6e;
+                border: 1px solid #182f6e;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                min-height: 60px;
+                max-width: 280px;
+                width: 100%;
+                span{
+                    font-family: 'latobold', 'arial', sans-serif;
+                    font-size: 18px;
+                    line-height: 1;
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: #ffffff;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .product-content{
+            .acc{
+                background-color: #efefef;
+                padding: 20px 30px;
+                margin-bottom: 50px;
+                .accordion {
+                    background-color: #eee;
+                    color: #444;
+                    cursor: pointer;
+                    width: 100%;
+                    text-align: left;
+                    border: none;
+                    outline: none;
+                    transition: 0.4s;
+                    font-family: 'lato_blackregular', 'Arial', sans-serif;
+                    font-size: 24px;
+                    line-height: 1.08;
+                    letter-spacing: normal;
+                    color: #282829;
+                    padding: 0;
+                    margin: 0;
+                    &:after {
+                        content: '\02795';
+                        font-size: 13px;
+                        color: #777;
+                        float: right;
+                        margin-left: 5px;
+                    }
+                }
+                .active:after {
+                    content: "\2796";
+                }
+                .panel {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.2s ease-out;
+                    p,ul{
+                        padding: 15px 0 0;
+                        margin: 0;
+                        list-style: none;
+                    }
+                    p,li{
+                        font-size: 14px;
+                        line-height: 2.3;
+                        letter-spacing: normal;
+                        color: #282829;
+                        margin: 0;
+                    }
+                }
+            }
+            .content{
+                .title{
+                    font-family: 'lato_blackregular', 'Arial', sans-serif;
+                    font-size: 24px;
+                    line-height: 1.08;
+                    letter-spacing: normal;
+                    color: #282829;
+                    margin-bottom: 15px;
+                }
+                .text{
+                    font-size: 14px;
+                    line-height: 1.43;
+                    letter-spacing: normal;
+                    color: #282829;
+                }
+            }
+        }
+    }
+    .productView-images{
+        .productView-thumbnails{
+            .productView-thumbnail{
+                width: 20%;
+                .productView-thumbnail-link{
+                    border: none;
+                    height: 80px;
+                    max-width: 80px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        max-height: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .productView-img-container {
+        max-width: 100%;
+        &:after{
+            padding-bottom: 90%;
+        }
+        img{
+            margin: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+}

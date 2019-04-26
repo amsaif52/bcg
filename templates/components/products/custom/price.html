@@ -1,0 +1,38 @@
+{{!-- There are 2 code paths for generating the PDP pricing HTML determined by the following #and condition. 
+    If a 'price_range' exists then we generate all HTML in price-range.html, otherwise it is defined here. Both code
+    paths generate the same HTML structure with some differences in whether that element is displayed by default (css styling).
+    
+    If you are making a change here or in price-range.html, you probably want to make that change in both files. --}}
+    {{#if price.without_tax}}
+        <div class="price-section price-section--withoutTax" {{#if schema_org}}itemprop="offers" itemscope itemtype="http://schema.org/Offer"{{/if}}>
+            <span data-product-price-without-tax class="price price--withoutTax{{#if price.with_tax}} price-section--minor{{/if}}">${{price.without_tax.value}}</span>
+            {{#if schema_org}}
+                <meta itemprop="availability" itemtype="http://schema.org/ItemAvailability"
+                    content="http://schema.org/{{#if product.pre_order}}PreOrder{{else if product.out_of_stock}}OutOfStock{{else if product.can_purchase '===' false}}OutOfStock{{else}}InStock{{/if}}">
+                <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/{{product.condition}}Condition">
+                <div itemprop="priceSpecification" itemscope itemtype="http://schema.org/PriceSpecification">
+                    <meta itemprop="price" content="{{price.without_tax.value}}">
+                    <meta itemprop="priceCurrency" content="{{currency_selector.active_currency_code}}">
+                    <meta itemprop="valueAddedTaxIncluded" content="false">
+                </div>
+            {{/if}}
+            {{#if price.with_tax}}
+                <abbr title="{{lang 'products.excluding_tax'}}">{{lang 'products.price_without_tax' tax_label=price.tax_label}}</abbr>
+            {{/if}}
+        </div>
+        <div class="price-section price-section--withoutTax rrp-price--withoutTax{{#if price.with_tax}} price-section--minor{{/if}}" {{#unless price.rrp_without_tax}}style="display: none;"{{/unless}}>
+            <span data-product-rrp-price-without-tax class="price price--rrp"> 
+                ${{price.rrp_without_tax.value}}
+            </span>
+        </div>
+        <div class="freeShipping">
+            {{#each custom_fields}}
+                {{#if name '==' 'Free Shipping'}}
+                    {{#if value '==' 'True'}}
+                        <span>Ships FREE</span>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+    {{/if}}
+    
