@@ -5,9 +5,20 @@ export default class Page extends PageManager {
     onReady() {
         const self = this;
         self.makeAccordion();
+        self.totalProductCost();
         $(window).on('load resize orientationchange', () => {
             this.applySteps();
         });
+    }
+    totalProductCost() {
+        const self = this;
+        const myProductName = self.context.myProductName;
+        const myProductPrice = myProductName.price.without_tax.value;
+        const totalProductPrice = myProductName.related_products.reduce((acc, val) => acc + val.price.without_tax.value, myProductPrice);
+        const mobilePrice = $('.productView-products.mobileonly .productsAdd .price');
+        const desktopPrice = $('.productView-products.desktoponly .prodPrice .price');
+        mobilePrice.text(`$${totalProductPrice}`);
+        desktopPrice.text(`$${totalProductPrice}`);
     }
     makeAccordion() {
         $('.accordion').on('click', (e) => {

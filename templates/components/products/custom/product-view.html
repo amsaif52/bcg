@@ -1,3 +1,4 @@
+{{inject "myProductName" product}}
 <div class="productView redesign" {{#if settings.data_tag_enabled}} data-event-type="product" data-entity-id="{{product.id}}" data-name="{{product.title}}" data-product-category="{{#each product.category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{product.brand.name}}" data-product-price="{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{else}}{{product.price.without_tax.value}}{{/if}}" data-product-variant="single-product-option"{{/if}}>    
         <section class="productView-details">
             <div class="productView-product">
@@ -102,6 +103,39 @@
                     </button>
                 {{/if}}
             </div>
+            
+            {{#if product.related_products}}
+                <div class="productView-products desktoponly">
+                    <div class="text">Frequently bought together</div>
+                    <div class="allproducts">
+                        <div class="desktop">
+                            <div class="relatedImages">
+                                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.main_image 'product_size' (cdn ../theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}">
+                                {{#each product.related_products}}
+                                    <img class="plus" src="{{cdn 'img/gil/ic-plus.svg'}}" alt="plus"/>
+                                    <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'product_size' (cdn ../theme_settings.default_image_product)}}" alt="{{product.image.alt}}" title="{{product.image.alt}}">
+                                {{/each}}
+                            </div>
+                            <div class="prodPrice">
+                                <div class="price">
+                                    $22
+                                </div>
+                                <div class="add-to-cart">
+                                    <span>
+                                        Add All To Cart
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="relatedList">
+                            <li>THIS ITEM: {{product.title}}</li>
+                            {{#each product.related_products}}
+                            <li>{{name}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            {{/if}}
             {{#if settings.show_product_rating}}
             <div class="productView-rating mobileonly">
                 {{> components/products/ratings rating=product.rating}}
@@ -121,6 +155,36 @@
                     </div>
                 {{/if}}
             {{/each}}
+            {{#if product.related_products}}
+                <div class="productView-products mobileonly">
+                    <div class="text">Frequently bought together</div>
+                    <div class="allproducts">
+                        <div class="relatedImages">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.main_image 'product_size' (cdn ../theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}">
+                            {{#each product.related_products}}
+                                <img class="plus" src="{{cdn 'img/gil/ic-plus.svg'}}" alt="plus"/>
+                                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'product_size' (cdn ../theme_settings.default_image_product)}}" alt="{{product.image.alt}}" title="{{product.image.alt}}">
+                            {{/each}}
+                        </div>
+                        <ul class="relatedList">
+                            <li>THIS ITEM: {{product.title}}</li>
+                            {{#each product.related_products}}
+                            <li>{{name}}</li>
+                            {{/each}}
+                        </ul>
+                        <div class="productsAdd">
+                            <div class="price">
+                                ${{product.price.sale_price_without_tax.value}}
+                            </div>
+                            <div class="all-add-cart">
+                                <span>
+                                    Add All To Cart
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
             {{{product.description}}}
         </section>
     

@@ -36,7 +36,7 @@ export default class HeaderScripts extends PageManager {
             }
         });
         $mobileMenuToggle.on('click', () => {
-            if ($($mainHeader).hasClass('blue-mobile')) {
+            if ($($mainHeader).hasClass('blue-mobile') || $($mainHeader).hasClass('is-open')) {
                 $($mainHeader).removeClass('blue-mobile');
                 $('.mSearch').removeClass('search-mobile');
                 $mobileDropBtn.each((idx, val) => {

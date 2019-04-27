@@ -358,19 +358,20 @@ header.header.gillette-us{
                             margin: 0;
                             li{
                                 a{
-                                    padding: 10px 10px 10px 0;
+                                    padding: 10px 0;
                                     text-decoration: none;
                                     text-transform: capitalize;
                                     font-family: 'latobold', 'arial', sans-serif;
                                     font-size: 24px;
-                                    font-weight: 900;
-                                    font-style: normal;
-                                    font-stretch: normal;
                                     line-height: 1.08;
                                     letter-spacing: normal;
-                                    text-align: center;
+                                    text-align: left;
                                     color: #182f6e;
                                     display: inline-block;
+                                    width: 100%;
+                                }
+                                &::last-child a{
+                                    padding-bottom: 0;
                                 }
                             }
                         }
