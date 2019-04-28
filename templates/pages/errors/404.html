@@ -1,17 +1,33 @@
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-<main class="page">
-    <section class="page-content page-content--centered">
-        <h1 class="page-heading">{{lang 'page_not_found.page_heading'}}</h1>
-        <p class="u-textAlignCenter">
-            {{lang 'page_not_found.message'}}
-        </p>
-
-        {{> components/common/search-box}}
+    <section class="redesign-error">
+        <div class="title">Page not found</div>
+        <div class="text">The page you're looking for can't be found. Go back to the <a href="/">homepage</a> or try searching.</div>
+        {{> components/common/custom/search-box}}
+        <section class="articles">
+            <div class="article last">
+                <div class="background-block">
+                    <div class="title unique">
+                        The Best Men Can Be
+                    </div>
+                    <a class="btn" href="#">
+                        <span>Learn More</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="article first">
+                <div class="background-block">
+                    <div class="title">
+                        Gifts &amp; Offers
+                    </div>
+                    <a class="btn" href="#">
+                        <span>Learn More</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </section>
-</main>
 
 {{/partial}}
 {{> layout/base}}

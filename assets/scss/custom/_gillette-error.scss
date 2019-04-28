@@ -1,0 +1,96 @@
+.redesign-error{
+    max-width: 1180px;
+    margin: 0 auto;
+
+    .articles{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+        @media screen and (max-width: 800px){
+            flex-direction: column;
+            margin-top: 50px 0 0;
+        }
+        .article{
+            height: 550px;
+            width: 550px;
+            position: relative;
+            flex: 1;
+            @media screen and (max-width: 800px){
+                height: 400px;
+                width: 100%;
+            }
+            &.first{
+                background-image: url('../img/gil/gift.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-position: 90%;
+                background-size: cover;
+                margin-left: 50px;
+                @media screen and (max-width: 800px){
+                    margin: 0;
+                    background-position: top center;
+                }
+            }
+            &.last{
+                background-image: url('../img/gil/best.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-position: center;
+                background-size: cover;
+                @media screen and (max-width: 800px){
+                    background-position: top center;
+                }
+            }
+            .background-block{
+                background-color: rgba(40, 40, 41, 0.5);
+                position: absolute;
+                z-index: 1;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 30px;
+                .title{
+                    font-family: 'lato_blackregular', 'arial', sans-serif;
+                    font-size: 30px;
+                    line-height: 1.13;
+                    text-align: center;
+                    color: #ffffff;
+                    &.unique{
+                        font-family: 'lato_blackitalic', 'arial', sans-serif;
+                        text-transform: uppercase;
+                    }
+                }
+                .btn{
+                    cursor: pointer;
+                    width: 280px;
+                    height: 60px;
+                    border: solid 1px #f9f9f9;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 30px auto 0;
+                    text-decoration: none;
+                    transition: all 250ms ease;
+                    span{
+                        font-family: 'latobold', 'arial', sans-serif;
+                        font-size: 18px;
+                        line-height: 1;
+                        text-align: center;
+                        color: #ffffff;
+                        text-transform: uppercase;
+                        @media screen and (max-width: 800px){
+                            font-size: 16px;
+                        }
+                    }
+                    &:hover, &:active{
+                        background-color: white;
+                        span{
+                            color: #182f6e;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
