@@ -150,7 +150,7 @@
                 }
             }
         }
-        .productView-rating.mobileOnly{
+        .productView-rating.mobileonly{
             display: none;
             @media screen and (max-width: 800px){
                 display: block;
@@ -167,6 +167,7 @@
                 line-height: 1.19;
                 letter-spacing: normal;
                 color: #808285;
+                vertical-align: sub;
             }
         }
         .productView-mobile-images{
@@ -397,15 +398,14 @@
             }
         }
         .freeShipping{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 3px 15px;
+            padding: 4px 15px;
             font-size: 20px;
             position: relative;
             background-color: #182f6e;
-            min-height: 25px;
+            height: 25px;
+            font-family: 'latobold_italic', 'arial', sans-serif;
+            font-size: 13px;
+            color: white;
             &:after {
                 content: " ";
                 position: absolute;
@@ -421,16 +421,11 @@
                 -webkit-transform: skew(-30deg, 0deg);
                 transform: skew(-30deg, 0deg);
             }
-            span{
-                font-family: 'latobold_italic', 'arial', sans-serif;
-                font-size: 13px;
-                color: white;
-            }
             @media screen and (max-width: 800px){
                 max-width: 90px;
             }
             &.desktoponly{
-                display: flex;
+                display: block;
                 @media screen and (max-width: 800px){
                     display: none;
                 }
@@ -438,7 +433,7 @@
             &.mobileonly{
                 display: none;
                 @media screen and (max-width: 800px){
-                    display: flex;
+                    display: block;
                     margin: 0 30px;
                     &.none{
                         background-color: transparent;

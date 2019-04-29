@@ -98,21 +98,21 @@
                         height: 100%;
                     }
                     .freeShipping{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        position: relative;
                         font-size: 20px;
                         position: relative;
                         background-color: #182f6e;
-                        min-height: 25px;
+                        height: 25px;
                         position: absolute;
                         top:15px;
                         left: 0;
                         z-index: 1;
                         >div{
                             position: relative;
-                            padding: 3px 15px;
+                            padding: 4px 15px;
+                            font-family: 'latobold_italic', 'arial', sans-serif;
+                            font-size: 13px;
+                            color: white;
+                            height: 100%;
                         }
                         >div:after {
                             content: " ";
@@ -128,11 +128,6 @@
                             -ms-transform: skew(-30deg, 0deg);
                             -webkit-transform: skew(-30deg, 0deg);
                             transform: skew(-30deg, 0deg);
-                        }
-                        span{
-                            font-family: 'latobold_italic', 'arial', sans-serif;
-                            font-size: 13px;
-                            color: white;
                         }
                     }
                 }
