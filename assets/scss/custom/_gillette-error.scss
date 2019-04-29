@@ -1,6 +1,102 @@
 .redesign-error{
     max-width: 1180px;
-    margin: 0 auto;
+    margin: 90px auto 60px;
+    @media screen and (max-width: 800px){
+        margin-top: 20px;
+    }
+    .title{
+        font-family: 'lato_blackregular', 'Arial', sans-serif;
+        font-size: 30px;
+        line-height: 1.13;
+        letter-spacing: normal;
+        color: #282829;
+        @media screen and (max-width: 800px){
+            text-align: center;
+            padding: 0 30px;
+        }
+    }
+    .text{
+        font-size: 14px;
+        line-height: 1.43;
+        letter-spacing: normal;
+        color: #808285;
+        margin-top: 30px;
+        margin-bottom:50px;
+        a{
+            color: #1d204f;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        
+        @media screen and (max-width: 800px){
+            text-align: left;
+            padding: 0 30px;
+        }
+    }
+    .form, .form-field{
+        margin: 0;
+    }
+    .form-prefixPostfix{
+        @media screen and (max-width: 800px){
+            padding: 0 30px;
+        }
+        @media screen and (max-width: 600px){
+            justify-content: flex-end;
+        }
+        .form-input{
+            flex: 0 1 350px;
+            
+            @media screen and (max-width: 800px){
+                margin-top: 0;
+            }
+            @media screen and (max-width: 600px){
+                flex: 0 1 100%
+            }
+        }
+    }
+    input.form-input{
+        border: solid 1px #182f6e;
+        border-radius: 0;
+        font-size: 16px;
+        font-family: 'latobold', 'arial', sans-serif;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #282829;
+        
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #182f6e;
+            font-family: 'latobold', 'arial', sans-serif;
+            opacity: 1; /* Firefox */
+        }
+          
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #182f6e;
+            font-family: 'latobold', 'arial', sans-serif;
+        }
+          
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color: #182f6e;
+            font-family: 'latobold', 'arial', sans-serif;
+        }
+    }
+    input[type="submit"]{
+        background-color: #182f6e;
+        border-radius: 0;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-family: 'latobold', 'arial', sans-serif;
+        line-height: 1;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        flex: 0 1 150px;
+        margin: 0 0 0 20px;
+        @media screen and (max-width: 600px){
+            margin-top: 20px;
+        }
+    }
 
     .articles{
         display: flex;
@@ -9,7 +105,7 @@
         margin: 50px 0;
         @media screen and (max-width: 800px){
             flex-direction: column;
-            margin-top: 50px 0 0;
+            margin-top: 30px;
         }
         .article{
             height: 550px;
