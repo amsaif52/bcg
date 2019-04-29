@@ -51,7 +51,6 @@
                     font-size: 14px;
                     line-height: 1.43;
                     color: #182f6e;
-                    margin-right: 25px;
                     @media screen and (max-width: 800px){
                         margin: 0;
                         text-align: center;
@@ -125,7 +124,7 @@
                 }
                 @media screen and (max-width: 800px){
                     margin-top: 20px;
-                    justify-content: center;
+                    justify-content: flex-end;
                 }
             }
         }

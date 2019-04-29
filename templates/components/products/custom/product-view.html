@@ -104,6 +104,7 @@
                 {{/if}}
             </div>
             
+            {{#if product.can_purchase}}
             {{#if product.related_products}}
                 <div class="productView-products desktoponly">
                     <div class="text">Frequently bought together</div>
@@ -136,6 +137,7 @@
                     </div>
                 </div>
             {{/if}}
+            {{/if}}
             {{#if settings.show_product_rating}}
             <div class="productView-rating mobileonly">
                 {{> components/products/ratings rating=product.rating}}
@@ -155,6 +157,7 @@
                     </div>
                 {{/if}}
             {{/each}}
+            {{#if product.can_purchase}}
             {{#if product.related_products}}
                 <div class="productView-products mobileonly">
                     <div class="text">Frequently bought together</div>
@@ -184,6 +187,7 @@
                         </div>
                     </div>
                 </div>
+            {{/if}}
             {{/if}}
             {{{product.description}}}
         </section>

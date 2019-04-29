@@ -44,6 +44,7 @@
                     line-height: 1.19;
                     letter-spacing: normal;
                     color: #808285;
+                    vertical-align: sub;
                 }
                 &.desktoponly{
                     display: block;
@@ -650,6 +651,7 @@
                 align-items: center;
                 padding: 15px 20px;
                 border: 1px solid #182f6e;
+                cursor: pointer;
                 span{
                     font-size: 18px;
                     font-family: 'latobold', 'arial', sans-serif;
@@ -674,7 +676,7 @@
                 font-size: 14px;
                 line-height: 1.43;
                 letter-spacing: normal;
-                color: #182f6e;
+                color: #000;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
