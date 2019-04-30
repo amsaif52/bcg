@@ -2,17 +2,18 @@ import $ from 'jquery';
 import PageManager from '../page-manager';
 
 export default class Page extends PageManager {
-    onReady(){
+    onReady() {
         this.openAcc();
         /* Slick needs no get Reinitialized on window Resize after it was destroyed */
         $(window).on('load resize orientationchange', () => {
-           this.isopenFunc();
+            this.isopenFunc();
         });
         this.checkProductGrid();
         this.addCheckMutationEvents();
     }
     checkProductGrid() {
-        $('.productGrid').each(function(idx, value) {
+        $('.productGrid').each((idx, value) => {
+            console.log(idx);
             if (!($(value).find('li').length > 0)) {
                 $(value).parent().css('display', 'none');
             }
@@ -31,7 +32,6 @@ export default class Page extends PageManager {
     openAcc() {
         const $filterMobile = $('.filterTitle-block.mobileonly');
         $filterMobile.on('click', (e) => {
-            console.log("Hee", $(e.currentTarget));
             const $first = $(e.currentTarget);
             if ($first.hasClass('is-open')) {
                 $first.removeClass('is-open');
@@ -59,7 +59,7 @@ export default class Page extends PageManager {
                     }
                 }
             }
-        }
+        };
         // Create an observer instance linked to the callback function
         const observer = new MutationObserver(callback);
 
