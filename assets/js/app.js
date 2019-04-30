@@ -54,6 +54,7 @@ const pageClasses = {
     pages_custom_page_redesign_home: () => import('./theme/custom/redesign-home'),
     pages_custom_category_redesign_indi_category: () => import('./theme/custom/redesign-indi-category'),
     pages_custom_product_redesign_product: () => import('./theme/custom/redesign-product'),
+    pages_custom_category_redesign_category: () => import('./theme/custom/redesign-category'),
 };
 
 // const customClasses = {};

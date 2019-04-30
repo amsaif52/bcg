@@ -1,11 +1,18 @@
 {{#if items}}
 <div class="accordion-block">
+    <div class="filterTitle-block desktoponly">
+        <div class="title">Filters</div>
+    </div>
+    <div class="filterTitle-block mobileonly">
+        <div class="title">Open Filters</div>
+        <div class="title">Close Filters</div>
+    </div>
     <div
-        class="accordion-navigation toggleLink {{#unless ../start_collapsed }} is-open {{/unless}}"
+        class="accordion-navigation toggleLink"
         role="button"
         data-collapsible="#facetedSearch-content--{{hyphenate facet }}">
         <h5 class="accordion-title">
-            {{ title }}
+            {{ title }}:
         </h5>
 
         <div class="accordion-navigation-actions">
@@ -21,13 +28,13 @@
         </div>
     </div>
 
-    <div id="facetedSearch-content--{{hyphenate facet }}" class="accordion-content {{#unless ../start_collapsed }} is-open {{/unless}}">
+    <div id="facetedSearch-content--{{hyphenate facet }}" class="accordion-content">
         <ul id="facetedSearch-navList--{{hyphenate facet }}" data-facet="{{facet}}" class="navList" data-has-more-results="{{ has_more_results }}">
             {{#each items}}
                 <li class="navList-item">
                     <a
                         href="{{ url }}"
-                        class="navList-action navList-action--checkbox {{#if selected }} is-selected {{/if}}"
+                        class="navList-action navList-action--checkbox {{#if selected }} is-selected {{/if}} {{title}}"
                         rel="nofollow"
                         data-faceted-search-facet>
                         {{ sanitize title }}
@@ -51,5 +58,10 @@
             </a>
         {{/if}}
     </div>
+
+    <h5 class="accordion-title sort">
+        Sort By: {{pagination.category.sort}}
+    </h5>
+    {{> components/products/filter sort=pagination.category.sort}}
 </div>
 {{/if}}

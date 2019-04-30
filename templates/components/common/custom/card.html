@@ -1,0 +1,48 @@
+<article class="card {{#if alternate}}card--alternate{{/if}}" {{#if settings.data_tag_enabled}} data-event-type="{{event}}" data-entity-id="{{id}}" data-position="{{position}}" data-name="{{product.name}}" data-product-category="{{#each category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{brand.name}}" data-product-price="{{#if price.with_tax}}{{price.with_tax.value}}{{else}}{{price.without_tax.value}}{{/if}}"  {{/if}}>
+    <figure class="card-figure">
+        <a href="{{product.url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
+            <div class="card-img-container">
+                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+            </div>
+        </a>
+    </figure>
+    <div class="card-body">
+        <h4 class="card-title">
+            <a href="{{product.url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>{{product.name}}</a>
+        </h4>
+
+        <div class="card-text" data-test-info-type="price">
+            {{#if product.price.without_tax}}
+                <div class="now">
+                    <span>${{product.price.without_tax.value}}</span>
+                </div>                    
+            {{/if}}
+            {{#if product.price.rrp_without_tax}}
+                <div class="was">
+                    <span>${{product.price.rrp_without_tax.value}}</span>
+                </div>
+            {{/if}}
+        </div>
+        {{#each product.custom_fields}}
+            {{#if name '==' 'Name'}}
+            <div class="text">
+                {{{value}}}
+            </div>
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="action">
+        {{#if product.show_cart_action}}
+            <button class="blue">
+                <span>subscribe</span>
+            </button>
+            <button class="link">
+                One Time Purchase
+            </button>
+        {{else}}
+            <button class="blue">
+                <span>Shop Online</span>
+            </button>
+        {{/if}}
+    </div>
+</article>

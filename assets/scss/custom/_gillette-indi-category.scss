@@ -27,12 +27,16 @@
         }
     }
     .featureCategoryProducts{
-        padding: 50px 10px 0;
+        padding: 30px 10px 0;
         max-width: 890px;
         margin: 0 auto;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start;
+        flex-wrap: wrap;
+        @media screen and (min-width: 801px) and (max-width: 910px){
+            justify-content: center;
+        }
         .slick-next{
             right: 20px;
             top: 270px;
@@ -64,7 +68,8 @@
             height: 35px;
         }
         .product {
-            &:last-child > div{
+            padding-top: 20px;
+            &:nth-child(n+3) > div{
                 margin-right: 0;
             }
             > div {
@@ -96,6 +101,11 @@
                         width: 100%;
                         outline: none;
                         height: 100%;
+                    }
+                    .shipo{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                     }
                     .freeShipping{
                         font-size: 20px;

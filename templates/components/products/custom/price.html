@@ -25,6 +25,7 @@
                 ${{price.rrp_without_tax.value}}
             </span>
         </div>
+        <div class="shipo {{#if shipy}}hide{{/if}}">
             {{#each custom_fields}}
                 {{#if name '==' 'Free Shipping'}}
                     {{#if value '==' 'True'}}
@@ -34,5 +35,6 @@
                     {{/if}}
                 {{/if}}
             {{/each}}
+        </div>
     {{/if}}
     

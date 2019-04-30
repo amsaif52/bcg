@@ -1,14 +1,35 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
 {{inject "myProductName" category}}
+{{inject "myPagination" pagination}}
 
 <script>
 // Note the lack of quotes around the jsContext handlebars helper, it becomes a string automatically.
 var jsContext = JSON.parse({{jsContext}}); // jsContext would output "{\"myProductName\": \"Sample Product\"}" which can feed directly into your JavaScript
 
-console.log(jsContext.myProductName); // Will output: Sample Product
+console.log(jsContext); // Will output: Sample Product
 </script>
 {{#partial "page"}}
-<div>
-    Redesign Category
+<div class="page redesignMainCategory">
+    {{#if category.faceted_search_enabled}}
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/common/custom/sidebar}}
+        </aside>
+    {{/if}}
+
+    <main class="page-content" id="product-listing-container">
+        {{#if category.products}}
+            {{> components/common/custom/product-listing}}
+        {{else}}
+            <p>{{lang 'categories.no_products'}}</p>
+        {{/if}}
+    </main>
 </div>
+
 {{/partial}}
 {{> layout/base}}

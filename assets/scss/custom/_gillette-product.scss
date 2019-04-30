@@ -286,7 +286,7 @@
                         height: 30px;
                         margin-right: 5px;
                         border: 1px solid #182f6e;
-                        border-radius: 4px;
+                        border-radius: 3px;
                     }
                     &.strip:before{
                         content: '';
@@ -396,6 +396,11 @@
                     display: none;
                 }
             }
+        }
+        .shipo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .freeShipping{
             padding: 4px 15px;
