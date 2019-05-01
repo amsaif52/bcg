@@ -9,6 +9,7 @@ product:
     similar_by_views:
         limit: {{theme_settings.productpage_similar_by_views_count}}
 ---
+{{inject "myProductName" product}}
 {{#partial "page"}}
     <div itemscope itemtype="http://schema.org/Product">
         {{> components/products/custom/product-view schema=true  }}

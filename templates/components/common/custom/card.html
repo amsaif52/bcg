@@ -3,6 +3,15 @@
         <a href="{{product.url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
             <div class="card-img-container">
                 <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                {{#each product.custom_fields}}
+                    {{#if name '==' 'Free Shipping'}}
+                        {{#if value '==' 'True'}}
+                        <div class="freeShipping">
+                            <span>Ships FREE</span>
+                        </div>
+                        {{/if}}
+                    {{/if}}
+                {{/each}}
             </div>
         </a>
     </figure>
@@ -33,16 +42,16 @@
     </div>
     <div class="action">
         {{#if product.show_cart_action}}
-            <button class="blue">
+            <a class="blue" href="/subscription#{{product.id}}">
                 <span>subscribe</span>
-            </button>
-            <button class="link">
+            </a>
+            <a class="link">
                 One Time Purchase
-            </button>
+            </a>
         {{else}}
-            <button class="blue">
+            <a class="blue">
                 <span>Shop Online</span>
-            </button>
+            </a>
         {{/if}}
     </div>
 </article>

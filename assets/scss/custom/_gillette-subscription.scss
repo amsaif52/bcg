@@ -1,0 +1,192 @@
+.subscription{
+    margin: 100px auto;
+    max-width: 1180px;
+    @media screen and (max-width: 800px){
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+    .title{
+        font-size: 30px;
+        font-family: 'lato_blackregular', 'arial', sans-serif;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: center;
+        color: #182f6e;
+    }
+    .text{
+        font-size: 16px;
+        font-family: 'lato_blackregular', 'arial', sans-serif;
+        line-height: 1.19;
+        letter-spacing: normal;
+        text-align: center;
+        color: #282829;
+        margin-top: 10px;
+    }
+    .subscription-option{
+        margin: 50px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: 800px){
+            flex-direction: column;
+        }
+        .sub:last-child{
+            margin-right: 0;
+        }
+        .sub{
+            width: 100%;
+            max-width: 300px;
+            margin-right: 80px;
+            border: 5px solid #d1d3d4;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            cursor: pointer;
+            .mainText{
+                font-size: 24px;
+                font-family: 'lato_blackregular', 'arial', sans-serif;
+                line-height: 1.08;
+                letter-spacing: normal;
+                color: #182f6e;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #d1d3d4;
+                text-align: left;
+                margin: 0 20px;
+            }
+            .text{
+                margin: 20px 0 60px;
+                font-size: 16px;
+                font-family: 'lato_blackregular', 'arial', sans-serif;
+                line-height: 1.19;
+                letter-spacing: normal;
+                color: #808285;
+                text-align: left;
+                padding: 0 20px;
+            }
+            .base{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 60px;
+                height: 60px;
+                border-bottom: solid 40px #d1d3d4;
+                border-right: solid 40px #d1d3d4;
+                border-left: solid 40px transparent;
+                border-top: solid 40px transparent;
+            }
+            &.choice{
+                border: 5px solid #182f6e;
+                .base{
+                    border-bottom: solid 40px #182f6e;
+                    border-right: solid 40px #182f6e;
+                    border-left: solid 40px transparent;
+                    border-top: solid 40px transparent;
+                    &:after{
+                        background: url(../img/gil/ic-check-white.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        content: '';
+                        display: block;
+                        width: 35px;
+                        height: 35px;
+                        position: relative;
+                        top: 0px;
+                    }
+                }
+            }
+            @media screen and (max-width: 800px){
+                margin-right: 0;
+                max-width: 320px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                img{
+                    width: 100px;
+                    height: 100px;
+                }
+                >div{
+                    margin-top: 20px;
+                    .mainText{
+                        font-size: 16px;
+                        font-family: 'lato_blackregular', 'arial', sans-serif;
+                        line-height: 1.19;
+                        letter-spacing: normal;
+                        color: #182f6e;
+                        padding-bottom: 0;
+                        border: none;
+                    }
+                    .text{
+                        font-size: 14px;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        color: #808285;
+                        margin: 10px 0 0;
+                    }
+                }  
+                .base{
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 40px;
+                    height: 40px;
+                    border-bottom: solid 25px #d1d3d4;
+                    border-right: solid 25px #d1d3d4;
+                    border-left: solid 25px transparent;
+                    border-top: solid 25px transparent;
+                }
+                &.choice{
+                    border: 5px solid #182f6e;
+                    .base{
+                        border-bottom: solid 25px #182f6e;
+                        border-right: solid 25px #182f6e;
+                        border-left: solid 25px transparent;
+                        border-top: solid 25px transparent;
+                        &:after{
+                            background: url(../img/gil/ic-check-white.svg);
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            content: '';
+                            display: block;
+                            width: 20px;
+                            height: 20px;
+                            position: relative;
+                            top: 0px;
+                        }
+                    }
+                }           
+            }
+        }
+    }
+    .disclaimer{
+        font-size: 14px;
+        line-height: 1.43;
+        letter-spacing: normal;
+        text-align: center;
+        color: #808285;
+    }
+    .checkoutBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto 0;
+        background-color: #182f6e;
+        width: 380px;
+        padding: 15px 0;
+        span{
+            font-size: 18px;
+            font-family: 'latobold', 'arial', sans-serif;
+            line-height: 1;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+        @media screen and (max-width: 800px){
+            max-width: 320px;
+            width: 100%;
+        }
+        &.notAllowed{
+            background-color: #d1d2d3;
+        }
+    }
+}

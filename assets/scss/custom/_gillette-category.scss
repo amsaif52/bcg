@@ -37,11 +37,45 @@
                     figure.card-figure{
                         a {
                             .card-img-container{
+                                position: relative;
                                 img{
                                     width: 100%;
                                 }
                                 &:after{
                                     padding-bottom: 100%;
+                                }
+                                .freeShipping{
+                                    font-size: 20px;
+                                    position: relative;
+                                    background-color: #182f6e;
+                                    height: 25px;
+                                    position: absolute;
+                                    top:15px;
+                                    left: 0;
+                                    z-index: 1;
+                                    padding: 4px 15px;
+                                    span{
+                                        position: relative;
+                                        font-family: 'latobold_italic', 'arial', sans-serif;
+                                        font-size: 13px;
+                                        color: white;
+                                        height: 100%;
+                                    }
+                                    &:after {
+                                        content: " ";
+                                        position: absolute;
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                        top: 0;
+                                        left: 0;
+                                        z-index: -1;
+                                        background-color: #182f6e;
+                                        transform-origin: bottom left;
+                                        -ms-transform: skew(-30deg, 0deg);
+                                        -webkit-transform: skew(-30deg, 0deg);
+                                        transform: skew(-30deg, 0deg);
+                                    }
                                 }
                             }
                         }
@@ -119,6 +153,7 @@
                         align-items: center;
                         width: 100%;
                         padding: 15px 0;
+                        text-decoration: none;
                         span{
                             font-size: 18px;
                             font-family: 'latobold', 'arial', 'sans-serif';
@@ -144,6 +179,7 @@
                         text-decoration: underline;
                         width: 100%;
                         text-align: left;
+                        display: block;
                         &:hover{
                             text-decoration: none;
                         }

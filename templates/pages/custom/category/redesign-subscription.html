@@ -1,0 +1,52 @@
+{{#partial "page"}}
+{{inject "category" category}}
+<script>
+// Note the lack of quotes around the jsContext handlebars helper, it becomes a string automatically.
+var jsContext = JSON.parse({{jsContext}}); // jsContext would output "{\"myProductName\": \"Sample Product\"}" which can feed directly into your JavaScript
+
+console.log(jsContext.category); // Will output: Sample Product
+</script>
+<div class="subscription">
+    <div class="title">How Often Do You Shave?</div>
+    <div class="text">So we know how frequently to send your blades</div>
+    <div class="subscription-option">
+        <div class="sub">
+            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/gil/image-1.jpg'}}" alt="subscription-1" title="subscription-1">
+            <div>
+                <div class="mainText">5-7 Shaves Per Week</div>
+                <div class="text">
+                    We’ll send you four blades Every two months
+                </div>
+            </div>
+            <div class="base"></div>
+        </div>
+        <div class="sub">
+            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/gil/image-2.jpg'}}" alt="subscription-2" title="subscription-2">
+            <div>
+                <div class="mainText">3-4 Shaves Per Week</div>
+                <div class="text">
+                    We’ll send you four blades Every three months
+                </div>
+            </div>
+            <div class="base"></div>
+        </div>
+        <div class="sub">
+            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/gil/image-3.jpg'}}" alt="subscription-3" title="subscription-3">
+            <div>
+                <div class="mainText">1-2 Shaves Per Week</div>
+                <div class="text">
+                    We’ll send you four blades Every four months
+                </div>
+            </div>
+            <div class="base"></div>
+        </div>
+    </div>
+    <div class="disclaimer">Every fourth refill free. Delay or cancel at any time. Your first refill blades will be shipped in 15 days & then at your chosen frequency.</div>
+    <div class="checkoutBtn notAllowed">
+        <span>
+            Checkout
+        </span>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

@@ -1,4 +1,3 @@
-{{inject "myProductName" product}}
 <div class="productView redesign" {{#if settings.data_tag_enabled}} data-event-type="product" data-entity-id="{{product.id}}" data-name="{{product.title}}" data-product-category="{{#each product.category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{product.brand.name}}" data-product-price="{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{else}}{{product.price.without_tax.value}}{{/if}}" data-product-variant="single-product-option"{{/if}}>    
         <section class="productView-details">
             <div class="productView-product">
@@ -55,13 +54,13 @@
                         {{/if}}
                     </div>
                     {{#if product.can_purchase}}
-                        <button class="blue">
+                        <a class="blue">
                             <span>Add To Cart</span>
-                        </button>
+                        </a>
                     {{else}}
-                        <button class="blue">
+                        <a class="blue">
                             <span>Shop Online</span>
-                        </button>
+                        </a>
                     {{/if}}
                 </div>
                 {{{region name="product_below_price"}}}
@@ -94,13 +93,13 @@
             </div>
             <div class="action desktoponly">
                 {{#if product.can_purchase}}
-                    <button class="blue">
+                    <a class="blue">
                         <span>Add To Cart</span>
-                    </button>
+                    </a>
                 {{else}}
-                    <button class="blue">
+                    <a class="blue">
                         <span>Shop Online</span>
-                    </button>
+                    </a>
                 {{/if}}
             </div>
             
@@ -111,10 +110,14 @@
                     <div class="allproducts">
                         <div class="desktop">
                             <div class="relatedImages">
-                                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.main_image 'product_size' (cdn ../theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}">
+                                <a href="{{product.url}}">
+                                    <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.main_image 'product_size' (cdn ../theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}">
+                                </a>
                                 {{#each product.related_products}}
                                     <img class="plus" src="{{cdn 'img/gil/ic-plus.svg'}}" alt="plus"/>
-                                    <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'product_size' (cdn ../theme_settings.default_image_product)}}" alt="{{product.image.alt}}" title="{{product.image.alt}}">
+                                    <a href="{{url}}">
+                                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'product_size' (cdn ../theme_settings.default_image_product)}}" alt="{{product.image.alt}}" title="{{product.image.alt}}">
+                                    </a>
                                 {{/each}}
                             </div>
                             <div class="prodPrice">
