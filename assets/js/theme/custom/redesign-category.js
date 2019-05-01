@@ -35,9 +35,11 @@ export default class Page extends PageManager {
             const $first = $(e.currentTarget);
             if ($first.hasClass('is-open')) {
                 $first.removeClass('is-open');
+                $first.parent().removeClass('is-open');
                 $first.parent().find('> div, > form, > h5').not('.filterTitle-block.mobileonly,.filterTitle-block.desktoponly').removeClass('is-open');
             } else {
                 $first.addClass('is-open');
+                $first.parent().addClass('is-open');
                 $first.parent().find('> div, > form, > h5').not('.filterTitle-block.mobileonly, .filterTitle-block.desktoponly').addClass('is-open');
             }
         });

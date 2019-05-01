@@ -32,13 +32,6 @@
                 </div>
             {{/if}}
         </div>
-        {{#each product.custom_fields}}
-            {{#if name '==' 'Name'}}
-            <div class="text">
-                {{{value}}}
-            </div>
-            {{/if}}
-        {{/each}}
     </div>
     <div class="action">
         {{#if product.show_cart_action}}

@@ -13,6 +13,13 @@ export default class Page extends PageManager {
         const productId = parseInt((window.location.hash).replace('#', ''), 10);
         const product = category.products.filter((val) => val.id === productId)[0];
         console.log(self, product);
+        fetch('/v3/catalog/products', {credentials: 'include'})
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(cartJson) {
+                console.log(cartJson);
+        });
     }
     adChoice() {
         $('.subscription-option .sub').on('click', (e) => {

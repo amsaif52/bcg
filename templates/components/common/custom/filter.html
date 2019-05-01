@@ -1,5 +1,12 @@
-<div id="facetedSearch" class="facetedSearch sidebarBlock">
+<div id="facetedSearch 1" class="facetedSearch sidebarBlock">
     {{#any facets visible=true}}
+        <div class="filterTitle-block desktoponly">
+            <div class="title">Filters</div>
+        </div>
+        <div class="filterTitle-block mobileonly">
+            <div class="title">Open Filters</div>
+            <div class="title">Close Filters</div>
+        </div>
         <div
             id="facetedSearch-navList"
             class="facetedSearch-navList blocker-container">
@@ -13,5 +20,9 @@
 
             <div class="blocker" style="display: none;"></div>
         </div>
+        <div class="accordion-title sort">
+            Sort By
+        </div>
+        {{> components/products/filter sort=pagination.category.sort}}
     {{/any}}
 </div>

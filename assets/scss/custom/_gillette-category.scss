@@ -12,10 +12,23 @@
         display: none;
     }
     .page-sidebar{
-        flex: 1 1 280px;
+        flex: 1 1 420px;
         width: 100%;
         @media screen and (max-width: 800px){
             flex: 1 1 auto;
+        }
+    }
+    .sidebarBlock{
+        padding: 10px;
+        @media screen and (max-width: 800px) and (min-width: 601px){
+            margin: 0 20px;
+            background-color: #f9f9f9;
+            border: solid 1px #182f6e;
+        }
+        @media screen and (max-width: 600px){
+            margin: 0 5px;
+            border: solid 1px #182f6e;
+            background-color: #f9f9f9;
         }
     }
     .page-content{
@@ -209,9 +222,11 @@
         }
         @media screen and (max-width: 800px) and (min-width: 601px){
             padding: 0 30px;
+            margin-top: 50px;
         }
         @media screen and (max-width: 600px){
             padding: 0 15px;
+            margin-top: 50px;
         }
     }
     .filterTitle-block{
@@ -223,7 +238,7 @@
             color: #282829;
             padding-bottom: 10px;
             border-bottom: 5px solid #d1d3d4;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
         &.desktoponly{
             display: block;
@@ -389,13 +404,13 @@
         font-family: 'lato_blackregular', 'arial', sans-serif;
         line-height: 1.19;
         letter-spacing: normal;
-        color: #282829;
+        color: #293a6d;
         margin-bottom: 15px;
         &.sort{
-            margin-top: 30px;
-            margin-bottom: 10px;
+            margin-top: 10px;
+            margin-bottom: 5px;
             @media screen and (max-width: 800px){
-                margin: 0 0 10px;
+                margin: 10px 0 0;
                 padding: 0 14px;
                 display: none;
                 &.is-open{
@@ -412,6 +427,7 @@
             .form-field{
                 border-radius: 0;
                 border: none;
+                background-color: transparent;
                 select{
                     border: solid 1px #182f6e;
                     border-radius: 0;
@@ -429,6 +445,7 @@
                     background-position: calc(100% - 15px) center;
                     background-size: 20px;
                     background-repeat: no-repeat;
+                    max-height: 40px;
                     option{
                         font-size: 18px;
                         font-family: 'latobold', 'arial', 'sans-serif';
@@ -449,13 +466,33 @@
     }
     .facetedSearch-navList{
         display: block;
+        .accordion{
+            margin: 0;
+        }
+        @media screen and (max-width: 800px){
+            display: none;
+            .accordion{
+                border: none;
+                border-radius: 0;
+            }
+            margin: 0 14px;
+            &.is-open{
+                display: block;
+            }
+        }
     }
     .productMainImage{
         background-color: white;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-bottom: 70px;
+        margin-bottom: 50px;
+        background-color: #f9f9f9;
+        position: relative;
+        width: calc(100% - 60px);
+        @media screen and (max-width: 800px){
+            width: calc(100% - 30px);
+        }
         .mainImg{
             position: relative;
             &:after{
@@ -489,28 +526,28 @@
                 top: 0;
                 right: 0;
                 z-index: 0;
-                background-color: #FFF;
+                background-color: #f9f9f9;
                 transform-origin: bottom left;
                 transform: skew(-15deg, 0deg);
             }
             &.shave{
                 &:after{
-                    background-color: green;
+                    background-color: #00abbc;
                 }
             }
             &.face{
                 &:after{
-                    background-color: #f57030;
+                    background-color: #f46f2f;
                 }
             }
             &.body{
                 &:after{
-                    background-color: #ffb700;
+                    background-color: #df1f35;
                 }
             }
             &.gifts{
                 &:after{
-                    background-color: #182f6e;
+                    background-color: #172f6c;
                 }
             }
         }
@@ -521,6 +558,266 @@
             letter-spacing: normal;
             color: #282829;
             margin-left: 30px;
+        }
+        &:after{
+            content:'';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: #f9f9f9;
+            transform-origin: bottom left;
+            -ms-transform: skew(-30deg, 0deg);
+            -webkit-transform: skew(-30deg, 0deg);
+            transform: skew(-30deg, 0deg);
+        }
+    }
+    .face-border{
+        border-radius: 15px;
+        position: relative;
+        margin-top: 20px;
+        .name{
+            text-transform: uppercase;
+            position: absolute;
+            top: -10px;
+            background-color: white;
+            font-family: 'lato_blackregular', 'arial', sans-serif;
+            left: 20px;
+            padding: 0 2px;
+            @media screen and (max-width: 800px){
+                background-color: #f9f9f9;
+            }
+        }
+        &.Shave{
+            border: 1px solid #00abbc;
+            .name{
+                color: #00abbc;
+            }
+        }
+        &.Face{
+            border: 1px solid #f46f2f;
+            .name{
+                color: #f46f2f;
+            }
+        }
+        &.Body{
+            border: 1px solid #df1f35;
+            .name{
+                color: #df1f35;
+            }
+        }
+        &.Gifts{
+            border: 1px solid #172f6c;
+            .name{
+                color: #172f6c;
+            }
+        }
+        ul.face-list{
+            margin: 0;
+            padding: 15px 15px 0px 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            li.navList-item{
+                flex: 0 1 auto;
+                margin-right: 20px;
+                &:nth-child(even){
+                    margin-right: 0;
+                    @media screen and (max-width: 800px){
+                        margin-right: 20px;
+                    }
+                }
+                // a.navList-action{
+                //     &:before{
+                //         background-color: transparent;
+                //         border: none;
+                //         width: 24px;
+                //         height: 24px;
+                //         background: url(../img/gil/ic-checkbox-off.svg);
+                //         background-size: contain;
+                //         margin-top: 0;
+                //         top: 2px;
+                //         left: 10px;
+                //     }
+                //     &.is-selected{
+                //         &:before{
+                //             background-color: transparent;
+                //             border: none;
+                //             width: 24px;
+                //             height: 24px;
+                //             background: url(../img/gil/ic-checkbox-on.svg);
+                //             background-size: contain;
+                //             margin-top: 0;
+                //             top: 2px;
+                //             left: 10px;
+                //         }
+                //     }
+                // }
+                a{
+                    font-size: 14px;
+                    line-height: 1.13;
+                    letter-spacing: normal;
+                    position: relative;
+                    padding-left: 25px;
+                    margin-bottom: 15px;
+                    &:after{
+                        content: none;
+                    }
+                }
+            }
+            &.Shave{
+                li.navList-item a.navList-action{
+                    &:before{
+                        background-color: transparent;
+                        border: none;
+                        width: 20px;
+                        height: 20px;
+                        background: url(../img/gil/ic-checkbox-off-shave.svg);
+                        background-size: contain;
+                        margin-top: 0;
+                        top: 1px;
+                        left: 0;
+                    }
+                    &.is-selected{
+                        &:before{
+                            background-color: transparent;
+                            border: none;
+                            width: 20px;
+                            height: 20px;
+                            background: url(../img/gil/ic-checkbox-on-shave.svg);
+                            background-size: contain;
+                            margin-top: 0;
+                            top: 1px;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+            &.Face{
+                li.navList-item a.navList-action{
+                    &:before{
+                        background-color: transparent;
+                        border: none;
+                        width: 20px;
+                        height: 20px;
+                        background: url(../img/gil/ic-checkbox-off-face.svg);
+                        background-size: contain;
+                        margin-top: 0;
+                        top: 1px;
+                        left: 0;
+                    }
+                    &.is-selected{
+                        &:before{
+                            background-color: transparent;
+                            border: none;
+                            width: 20px;
+                            height: 20px;
+                            background: url(../img/gil/ic-checkbox-on-face.svg);
+                            background-size: contain;
+                            margin-top: 0;
+                            top: 1px;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+            &.Body{
+                li.navList-item a.navList-action{
+                    &:before{
+                        background-color: transparent;
+                        border: none;
+                        width: 20px;
+                        height: 20px;
+                        background: url(../img/gil/ic-checkbox-off-body.svg);
+                        background-size: contain;
+                        margin-top: 0;
+                        top: 1px;
+                        left: 0;
+                    }
+                    &.is-selected{
+                        &:before{
+                            background-color: transparent;
+                            border: none;
+                            width: 20px;
+                            height: 20px;
+                            background: url(../img/gil/ic-checkbox-on-body.svg);
+                            background-size: contain;
+                            margin-top: 0;
+                            top: 1px;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+            &.Gifts{
+                li.navList-item a.navList-action{
+                    &:before{
+                        background-color: transparent;
+                        border: none;
+                        width: 20px;
+                        height: 20px;
+                        background: url(../img/gil/ic-checkbox-off-gifts.svg);
+                        background-size: contain;
+                        margin-top: 0;
+                        top: 1px;
+                        left: 0;
+                    }
+                    &.is-selected{
+                        &:before{
+                            background-color: transparent;
+                            border: none;
+                            width: 20px;
+                            height: 20px;
+                            background: url(../img/gil/ic-checkbox-on-gifts.svg);
+                            background-size: contain;
+                            margin-top: 0;
+                            top: 1px;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .allProducts{
+        margin: 0 20px;
+        a{
+            font-size: 14px;
+            line-height: 1.13;
+            letter-spacing: normal;
+            position: relative;
+            padding-left: 25px;
+            &:after{
+                content: none;
+            }
+            &:before{
+                background-color: transparent;
+                border: none;
+                width: 20px;
+                height: 20px;
+                background: url(../img/gil/ic-checkbox-off-all.svg);
+                background-size: contain;
+                margin-top: 0;
+                top: 1px;
+                left: 0;
+            }
+            &.is-selected{
+                &:before{
+                    background-color: transparent;
+                    border: none;
+                    width: 20px;
+                    height: 20px;
+                    background: url(../img/gil/ic-checkbox-on-all.svg);
+                    background-size: contain;
+                    margin-top: 0;
+                    top: 1px;
+                    left: 0;
+                }
+            }
         }
     }
 }

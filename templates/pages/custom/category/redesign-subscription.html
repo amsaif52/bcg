@@ -1,12 +1,6 @@
 {{#partial "page"}}
 {{inject "category" category}}
-<script>
-// Note the lack of quotes around the jsContext handlebars helper, it becomes a string automatically.
-var jsContext = JSON.parse({{jsContext}}); // jsContext would output "{\"myProductName\": \"Sample Product\"}" which can feed directly into your JavaScript
-
-console.log(jsContext.category); // Will output: Sample Product
-</script>
-<div class="subscription">
+<!-- <div class="subscription">
     <div class="title">How Often Do You Shave?</div>
     <div class="text">So we know how frequently to send your blades</div>
     <div class="subscription-option">
@@ -47,6 +41,7 @@ console.log(jsContext.category); // Will output: Sample Product
             Checkout
         </span>
     </div>
-</div>
+</div> -->
+{{{category.description}}}
 {{/partial}}
 {{> layout/base}}
