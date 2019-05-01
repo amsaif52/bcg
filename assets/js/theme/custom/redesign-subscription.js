@@ -8,18 +8,18 @@ export default class Page extends PageManager {
         console.log(this.context.category);
     }
     contextCategory() {
-        const self = this;
-        const category = this.context.category;
-        const productId = parseInt((window.location.hash).replace('#', ''), 10);
-        const product = category.products.filter((val) => val.id === productId)[0];
-        console.log(self, product);
-        fetch('/v3/catalog/products', {credentials: 'include'})
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(cartJson) {
-                console.log(cartJson);
-        });
+        // const self = this;
+        // const category = this.context.category;
+        // const productId = parseInt((window.location.hash).replace('#', ''), 10);
+        // const product = category.products.filter((val) => val.id === productId)[0];
+        // console.log(self, product);
+        // fetch('/v3/catalog/products', {credentials: 'include'})
+        //     .then(function(response) {
+        //         return response.json();
+        //     })
+        //     .then(function(cartJson) {
+        //         console.log(cartJson);
+        // });
     }
     adChoice() {
         $('.subscription-option .sub').on('click', (e) => {
