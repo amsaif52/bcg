@@ -10,13 +10,17 @@ export default class HeaderScripts extends PageManager {
         const $searchDropdown = $('.search > a, .dropdown.dropdown--quickSearch');
         const $mobileMenuToggle = $('.mobileMenu-toggle');
         const $mobileSearch = $('.mSearch > a');
-        $dropbtn.mouseenter((e) => {
-            $(e.currentTarget).addClass('blue');
-            $mainHeader.removeClass('blue');
-        }).mouseleave((e) => {
-            $(e.currentTarget).removeClass('blue');
-            $mainHeader.addClass('blue');
-        });
+        const $desktopHeader = $('button.dropbtn');
+        // $dropbtn.mouseenter((e) => {
+        //     $(e.currentTarget).addClass('blue');
+        //     $mainHeader.removeClass('blue');
+        // }).mouseleave((e) => {
+        //     $(e.currentTarget).removeClass('blue');
+        //     $mainHeader.addClass('blue');
+        // });
+        // $dropbtn.toggleClass(() => {
+        //     return
+        // });
         $mobileDropBtn.on('click', (e) => {
             $mobileDropBtn.each((idx, val) => {
                 if (val !== e.currentTarget) {
@@ -54,6 +58,18 @@ export default class HeaderScripts extends PageManager {
             $mainHeader.addClass('blue');
             $('a.navUser-action--quickSearch').click();
         });
+        // $('.search > a').on('click', (e) => {
+        //     e.preventDefault();
+        //     if ($(e.currentTarget).hasClass('hover')) {
+        //         $(e.currentTarget).removeClass('hover');
+        //         $mainHeader.addClass('blue');
+        //         $('a.navUser-action--quickSearch').click();
+        //     } else {
+        //         $(e.currentTarget).addClass('hover');
+        //         $mainHeader.removeClass('blue');
+        //         $('a.navUser-action--quickSearch').click();
+        //     }
+        // });
         $mobileSearch.on('click', (e) => {
             e.preventDefault();
             $mainHeader.removeClass('blue-mobile');
@@ -65,6 +81,21 @@ export default class HeaderScripts extends PageManager {
                 $(e.currentTarget).parent().removeClass('search-mobile');
             } else {
                 $(e.currentTarget).parent().addClass('search-mobile');
+            }
+        });
+        $desktopHeader.on('click', (e) => {
+            e.preventDefault();
+            const $currentHeaderTab = $(e.currentTarget);
+            const $currentHeaderTabParent = $currentHeaderTab.parent();
+            if ($currentHeaderTabParent.hasClass('hover')) {
+                $currentHeaderTabParent.removeClass('hover');
+                $currentHeaderTabParent.removeClass('blue');
+                $mainHeader.addClass('blue');
+            } else {
+                $dropbtn.removeClass('hover blue');
+                $currentHeaderTabParent.addClass('hover');
+                $currentHeaderTabParent.addClass('blue');
+                $mainHeader.removeClass('blue');
             }
         });
         $('input.redesignCheckbox').on('click', (e) => {

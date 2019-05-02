@@ -10,7 +10,7 @@ header.header.gillette-us{
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         flex-wrap: wrap;
         .top-bar-left{
             flex: 0 0 100%;
@@ -134,7 +134,7 @@ header.header.gillette-us{
         .top-bar-center{
             flex: 0 0 20%;
             @media screen and (min-width: 1024px){
-                margin-left: -250px;
+                margin-left: -255px;
             }
             a{
                 display: inline-block;
@@ -201,7 +201,7 @@ header.header.gillette-us{
     }
   
   /* Add a red background color to navbar links on hover */
-  .dropdown1:hover .dropbtn {
+  .dropdown1.hover .dropbtn {
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
     background-color: white;
   }
@@ -239,7 +239,7 @@ header.header.gillette-us{
   }
   
   /* Show the dropdown menu on hover */
-  .dropdown1:hover .dropdown-content {
+  .dropdown1.hover .dropdown-content {
     display: block;
     top: 83px;
     left: 0;
@@ -322,7 +322,7 @@ header.header.gillette-us{
         }
     }
   }
-  .dropdown1:hover .space{
+  .dropdown1.hover .space{
     display: block;
     width: 100%;
     background-color: white;
