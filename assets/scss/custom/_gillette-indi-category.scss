@@ -42,7 +42,7 @@
             top: 270px;
         }
         .slick-prev{
-            left: 20px;
+            left: 5px;
             top: 270px;
         }
         .slick-slide{
@@ -69,8 +69,10 @@
         }
         .product {
             padding-top: 20px;
-            &:nth-child(n+3) > div{
-                margin-right: 0;
+            @media screen and (min-width: 801px){
+                &:nth-child(n+3) > div{
+                    margin-right: 0;
+                }
             }
             > div {
                 max-width: 250px;

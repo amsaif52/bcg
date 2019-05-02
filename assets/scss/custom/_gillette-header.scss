@@ -369,6 +369,12 @@ header.header.gillette-us{
                             padding: 0;
                             text-transform: uppercase;
                         }
+                        @media screen and (max-width: 800px){
+                            .navPages-action, .dropdown-mobile{
+                                max-width: 240px;
+                                margin: 0 auto;
+                            }
+                        }
                     }
                 }
                 .dropdown-mobile-content{
@@ -568,6 +574,9 @@ header.header.gillette-us{
                 padding: 0 30px;
                 input.form-input{
                     flex: 0 0 315px;
+                    @media screen and (max-width: 414px){
+                        flex: 0 0 100%;
+                    }
                     border-radius: 0;
                     border: solid 1px #182f6e;
                     background-color: #efefef;
