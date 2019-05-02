@@ -37,7 +37,7 @@ header.header.gillette-us{
                     display: flex;
                     flex-flow: row nowrap;
                     justify-content: flex-start;
-                    align-items: flex-start;
+                    align-items: center;
                     text-decoration: none;
                     cursor: pointer;
                     padding: 0.7rem 1rem;
@@ -48,6 +48,15 @@ header.header.gillette-us{
                     letter-spacing: normal;
                     color: #182f6e;
                     text-transform: uppercase;
+                    span{
+                        font-size: 16px;
+                        line-height: 1;
+                        letter-spacing: normal;
+                        font-family: 'latoregular', 'Arial', sans-serif;
+                        padding-right: 5px;
+                        text-transform: capitalize;
+                        font-weight: normal;
+                    }
                     svg{
                         outline: none;
                         stroke: none;
@@ -86,6 +95,9 @@ header.header.gillette-us{
                     letter-spacing: normal;
                     color: #182f6e;
                     text-transform: uppercase;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
                 @media screen and (max-width: 800px){
                     &.accountNav, &.search{
@@ -122,7 +134,7 @@ header.header.gillette-us{
         .top-bar-center{
             flex: 0 0 20%;
             @media screen and (min-width: 1024px){
-                margin-left: -20%;
+                margin-left: -250px;
             }
             a{
                 display: inline-block;
@@ -251,6 +263,14 @@ header.header.gillette-us{
             
             &:not(:last-child){
                 margin-right: 20px;
+            }
+            >span{
+                font-family: 'latobold', 'arial', sans-serif;
+                font-size: 18px;
+                line-height: 1;
+                letter-spacing: normal;
+                color: #182f6e;
+                text-transform: uppercase;
             }
             img{
                 object-fit: cover;
