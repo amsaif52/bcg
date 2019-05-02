@@ -385,12 +385,12 @@
                     color: #ffffff;
                     text-transform: uppercase;
                 }
-                &:hover{
-                    background-color: transparent;
-                    span{
-                        color: #182f6e;
-                    }
-                }
+                // &:hover{
+                //     background-color: transparent;
+                //     span{
+                //         color: #182f6e;
+                //     }
+                // }
             }
             &.desktoponly{
                 display: block;
@@ -663,12 +663,12 @@
                     color: #182f6e;
                     text-transform: uppercase;
                 }
-                &:hover, &:active{
-                    background-color: #182f6e;
-                    span{
-                        color: white;
-                    }
-                }
+                // &:hover, &:active{
+                //     background-color: #182f6e;
+                //     span{
+                //         color: white;
+                //     }
+                // }
             }
         }
         .relatedList{
@@ -722,12 +722,12 @@
                     color: #182f6e;
                     text-transform: uppercase;
                 }
-                &:hover, &:active{
-                    background-color: #182f6e;
-                    span{
-                        color: white;
-                    }
-                }
+                // &:hover, &:active{
+                //     background-color: #182f6e;
+                //     span{
+                //         color: white;
+                //     }
+                // }
             }
         }
     }

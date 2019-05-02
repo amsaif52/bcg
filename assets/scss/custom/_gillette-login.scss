@@ -13,13 +13,24 @@
         text-align: center;
         color: #282829;
     }
-    .alertBox-column.alertBox-message{
-        span{
-            font-size: 12px;
-            font-family: 'latobold', 'arial', sans-serif;
-            line-height: 1.5;
-            letter-spacing: normal;
-            color: #de1f36;
+    .alertBox{
+        &.alertBox--success .alertBox-message{
+            span{
+                font-size: 12px;
+                font-family: 'latobold', 'arial', sans-serif;
+                line-height: 1.5;
+                letter-spacing: normal;
+                color: #de1f36;
+            }
+        }
+        &.alertBox--error .alertBox-message{
+            span{
+                font-size: 12px;
+                font-family: 'latobold', 'arial', sans-serif;
+                line-height: 1.5;
+                letter-spacing: normal;
+                color: #d5ffd8;
+            }
         }
     }
     .login-row, .form{
@@ -66,9 +77,9 @@
             text-align: right;
             color: #182f6e;
             text-decoration: none;
-            &:hover{
-                text-decoration: underline;
-            }
+            // &:hover{
+            //     text-decoration: underline;
+            // }
         }
         input[type="checkbox"]{
             position: absolute;
@@ -97,10 +108,10 @@
             color: #ffffff;
             background-color: #182f6e;
             border-radius: 0;
-            &:hover{
-                background-color: transparent;
-                color: #182f6e;
-            }
+            // &:hover{
+            //     background-color: transparent;
+            //     color: #182f6e;
+            // }
         }
         .form-field {
             display: block;
@@ -190,7 +201,7 @@
             display: none;
         }
         }
-        .form-field:hover .tooltiptext {
+        input.redesignCheckbox:hover + .tooltiptext {
             visibility: visible;
         }
         .bottom{
@@ -216,12 +227,12 @@
                     border: solid 1px #182f6e;
                     padding: 15px 0;
                     text-decoration: none;
-                    &:hover{
-                        background-color: #182f6e;
-                        span{
-                            color: white;
-                        }
-                    }
+                    // &:hover{
+                    //     background-color: #182f6e;
+                    //     span{
+                    //         color: white;
+                    //     }
+                    // }
                     span{
                         font-size: 18px;
                         font-family: 'latobold', 'arial', sans-serif;
@@ -296,9 +307,9 @@
         a{
             color:#1d204f;
             text-decoration: none;
-            &:hover{
-                text-decoration: underline;
-            }
+            // &:hover{
+            //     text-decoration: underline;
+            // }
         }
         &.distance{
             margin: 30px 0;
@@ -325,7 +336,7 @@
         width: 50%;
         clear: none;
         float: left;
-        &:nth-child(3n+1){
+        &:nth-child(1),&:nth-child(n+10){
             width: 100%;
         }
         @media screen and (max-width:  800px){

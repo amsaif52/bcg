@@ -96,12 +96,12 @@
                     @media screen and (max-width: 414px){
                         margin-top: 40%;
                     }
-                    &:hover, &:active{
-                        background-color: transparent;
-                        span{
-                            color: #182f6e;
-                        }
-                    }
+                    // &:hover, &:active{
+                    //     background-color: transparent;
+                    //     span{
+                    //         color: #182f6e;
+                    //     }
+                    // }
                     span{
                         font-family: 'latobold', 'arial', sans-serif;
                         font-size: 18px;
@@ -197,12 +197,12 @@
                     }
                 }
                 transition: all 250ms ease;
-                &:hover{
-                    background-color: #182f6e;
-                    span{
-                        color: #f9f9f9;
-                    }
-                }
+                // &:hover{
+                //     background-color: #182f6e;
+                //     span{
+                //         color: #f9f9f9;
+                //     }
+                // }
             }
         }
     }
@@ -254,12 +254,12 @@
                         color: #182f6e;
                     }
                     border: solid 1px #182f6e;
-                    &:hover{
-                        background-color: #182f6e;
-                        span{
-                            color: #f9f9f9;
-                        }
-                    }
+                    // &:hover{
+                    //     background-color: #182f6e;
+                    //     span{
+                    //         color: #f9f9f9;
+                    //     }
+                    // }
                 }                   
             }
             .stars{
@@ -337,12 +337,12 @@
                             font-size: 16px;
                         }
                     }
-                    &:hover{
-                        background-color: #f9f9f9;
-                        span{
-                            color: #182f6e;
-                        }
-                    }
+                    // &:hover{
+                    //     background-color: #f9f9f9;
+                    //     span{
+                    //         color: #182f6e;
+                    //     }
+                    // }
                 }
             }
 
@@ -528,12 +528,12 @@
                             font-size: 16px;
                         }
                     }
-                    &:hover, &:active{
-                        background-color: white;
-                        span{
-                            color: #182f6e;
-                        }
-                    }
+                    // &:hover, &:active{
+                    //     background-color: white;
+                    //     span{
+                    //         color: #182f6e;
+                    //     }
+                    // }
                 }
             }
         }

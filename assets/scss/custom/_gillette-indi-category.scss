@@ -193,13 +193,13 @@
                             color: #ffffff;
                             text-transform: uppercase;
                         }
-                        &:hover{
-                            border: 1px solid #182f6e;
-                            background-color: white;
-                            span{
-                                color: #182f6e;
-                            }
-                        }
+                        // &:hover{
+                        //     border: 1px solid #182f6e;
+                        //     background-color: white;
+                        //     span{
+                        //         color: #182f6e;
+                        //     }
+                        // }
                     }
                     > a.link{
                         padding: 10px 0 0;
@@ -211,9 +211,9 @@
                         width: 100%;
                         text-align: left;
                         display: block;
-                        &:hover{
-                            text-decoration: none;
-                        }
+                        // &:hover{
+                        //     text-decoration: none;
+                        // }
                     }
                 }
                 .description{
@@ -256,13 +256,13 @@
             text-align: center;
             color: #182f6e;
         }
-        &:hover{
-            background-color: #182f6e;
-            border: 1px solid #182f6e;
-            span{
-                color: white;
-            }
-        }
+        // &:hover{
+        //     background-color: #182f6e;
+        //     border: 1px solid #182f6e;
+        //     span{
+        //         color: white;
+        //     }
+        // }
     }
     .featureCategoryCompare{
         overflow-x: auto;
