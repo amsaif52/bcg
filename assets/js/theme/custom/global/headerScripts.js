@@ -67,5 +67,14 @@ export default class HeaderScripts extends PageManager {
                 $(e.currentTarget).parent().addClass('search-mobile');
             }
         });
+        $('input.redesignCheckbox').on('click', (e) => {
+            const inputChangeType = $(e.currentTarget).parent().find('.form-input');
+            const inputType = inputChangeType.attr('type');
+            if (inputType === 'text') {
+                inputChangeType.attr('type', 'password');
+            } else {
+                inputChangeType.attr('type', 'text');
+            }
+        });
     }
 }

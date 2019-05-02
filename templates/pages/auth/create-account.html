@@ -1,14 +1,13 @@
 {{inject 'passwordRequirements' settings.password_requirements}}
 {{#partial "page"}}
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-    <h1 class="page-heading">{{lang 'create_account.heading' }}</h1>
-
-    <div class="account account--fixed">
-        <div class="account-body">
+        <div class="account-body redesignLogin">
             {{#if forms.create_account.error}}
                 {{> components/common/alert-error forms.create_account.error}}
             {{/if}}
             {{#if settings.account_creation_enabled}}
+                <div class="title">
+                    {{lang 'create_account.heading'}}
+                </div>
                 <form action="{{urls.auth.save_new_account}}" data-create-account-form method="post" class="form">
                     <div class="form-row form-row--half">
                         {{#each forms.create_account.account_fields }}
@@ -21,12 +20,28 @@
                         {{inject 'state_error' (lang 'errors.state_error')}}
                     </div>
                     {{{ forms.create_account.recaptcha.markup}}}
+                    <div class="passwordList">
+                        <ul>
+                            <li>Does not contain email</li>
+                            <li>8 characters minimum</li>
+                            <li>One uppercase letter</li>
+                            <li>One lowercase letter</li>
+                            <li>One Number</li>
+                        </ul>
+                    </div>
                     <div class="form-actions">
                         <input type="submit" class="button button--primary" value="{{lang 'forms.create_account.submit_value' }}" />
                     </div>
                 </form>
+                <div class="disclaimer">Already have an account?</div>
+
+                <div class="disclaimer distance">
+                    <a href="{{urls.auth.login}}">Log in</a>
+                </div>
+                        
+                <div class="disclaimer">By registering, I agree to receive emails from Gillette and other trusted <a href="#">P&G brands</a> and programs. Click to read P&G <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.
+                </div>
             {{/if}}
         </div>
-    </div>
 {{/partial}}
 {{> layout/base}}

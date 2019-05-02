@@ -1,0 +1,335 @@
+.redesignLogin{
+    margin: 80px auto 100px;
+    max-width: 610px;
+    padding: 0 30px;
+    @media screen and (max-width: 800px){
+        margin: 30px auto 50px;
+    }
+    .title{
+        font-size: 30px;
+        font-family: 'lato_blackregular', 'arial', sans-serif;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: center;
+        color: #282829;
+    }
+    .alertBox-column.alertBox-message{
+        span{
+            font-size: 12px;
+            font-family: 'latobold', 'arial', sans-serif;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: #de1f36;
+        }
+    }
+    .login-row, .form{
+        margin-top: 20px;
+        .login-form{
+            margin: 0;
+            padding: 0;
+            float: none;
+            width: 100%;
+        }
+        .form-actions{
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+        }
+        select{
+            border-radius: 0;
+            border: solid 1px #182f6e;
+            font-size: 18px;
+            font-family: 'latobold', 'arial', 'sans-serif';
+            line-height: 1;
+            letter-spacing: normal;
+            color: #182f6e;
+            -webkit-appearance: none;
+            background-image: url(../img/gil/ic-down.svg);
+            background-position: calc(100% - 15px) center;
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-color: #f9f9f9;
+            option {
+                font-size: 18px;
+                font-family: 'latobold', 'arial', 'sans-serif';
+                line-height: 1;
+                letter-spacing: normal;
+                color: #182f6e;
+            }
+        }
+        a.forgot-password{
+            align-self: flex-end;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.43;
+            letter-spacing: normal;
+            text-align: right;
+            color: #182f6e;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        input[type="checkbox"]{
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            top: 35px;
+            right: 25px;
+            cursor: pointer;
+            display: block;
+            background-image: url('../img/gil/eye.svg');
+            background-position: center;
+            background-size: contain;
+            appearance: none;
+            background-repeat: no-repeat;
+            outline: none;
+        }
+        input[type="submit"]{
+            margin: 0;
+            text-transform: uppercase;
+            padding: 15px 0;
+            font-size: 18px;
+            font-family: 'latobold', 'arial', sans-serif;
+            line-height: 1;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;
+            background-color: #182f6e;
+            border-radius: 0;
+            &:hover{
+                background-color: transparent;
+                color: #182f6e;
+            }
+        }
+        .form-field {
+            display: block;
+            margin: 0 0 20px;
+            max-width: none;
+            position: relative;
+            width: 100%;
+        }
+        label.form-label{
+            font-size: 16px;
+            font-family: 'latobold', 'arial', sans-serif;
+            line-height: 1.13;
+            letter-spacing: normal;
+            color: #182f6e;
+            sup{
+                font-size: 16px;
+                font-family: 'latobold', 'arial', sans-serif;
+                line-height: 1.13;
+                letter-spacing: normal;
+                color: #182f6e;
+                top: -1.5px;
+            }
+        }
+        input.form-input{
+            border: solid 1px #182f6e;
+            border-radius: 0;
+            background-color: #f9f9f9;
+            float: none;
+            font-size: 16px;
+            font-family: 'latobold', 'arial', sans-serif;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: #282829;
+        }
+        span.form-inlineMessage{
+            &:before{
+                content: none;
+            }
+            font-size: 12px;
+            font-family: 'latobold', 'arial', sans-serif;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: #de1f36;
+        }
+        .form-field .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            text-align: center;
+            border-radius: 0;
+            padding: 12px 0;
+            position: absolute;
+            z-index: 1;
+            top: 24px;
+            left: 100%;
+            font-size: 14px;
+            line-height: 1.43;
+            letter-spacing: normal;
+            text-align: center;
+            color: #182f6e;
+            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+            background-color: #f9f9f9;
+            @media screen and (max-width: 1000px){
+                top: 75px;
+                left: calc(100% - 200px);
+            }
+            @media screen and (max-width: 800px){
+                display: none;
+            }
+        }
+        .form-field .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -15px;
+        border-width: 15px 20px 15px 10px;
+        border-style: solid;
+        border-color: transparent #f9f9f9 transparent transparent;
+        @media screen and (max-width: 1000px){
+            top: -68%;
+            right: 10%;
+            margin-left: -5px;
+            margin-top: 0;
+            transform: rotate(90deg);
+        }
+        @media screen and (max-width: 800px){
+            display: none;
+        }
+        }
+        .form-field:hover .tooltiptext {
+            visibility: visible;
+        }
+        .bottom{
+            border-top: 1px solid #d1d3d4;
+            padding-top: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            .text{
+                font-size: 16px;
+                font-family: 'lato_blackregular', 'Arial', sans-serif;
+                line-height: 1.19;
+                letter-spacing: normal;
+                text-align: center;
+                color: #282829;
+            }
+            .signupBtn{
+                &.desktoponly{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 15px;
+                    border: solid 1px #182f6e;
+                    padding: 15px 0;
+                    text-decoration: none;
+                    &:hover{
+                        background-color: #182f6e;
+                        span{
+                            color: white;
+                        }
+                    }
+                    span{
+                        font-size: 18px;
+                        font-family: 'latobold', 'arial', sans-serif;
+                        line-height: 1;
+                        letter-spacing: normal;
+                        text-align: center;
+                        color: #182f6e;
+                    }
+                    @media screen and (max-width: 800px){
+                        display: none;
+                    }
+                }
+                &.mobileonly{
+                    display: none;
+                    @media screen and (max-width: 800px){
+                        display: inline;
+                        text-decoration: none;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.43;
+                        letter-spacing: normal;
+                        text-align: center;
+                        color: #1d204f;
+                    }
+                }
+            }
+            @media screen and (max-width: 800px){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .text{
+                    color: #808285;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.43;
+                    letter-spacing: normal;
+                    font-family: 'latoregular', 'Arial', sans-serif;
+                }
+            }
+        }
+    }
+    .passwordList{
+        margin: 15px 0;
+        ul{
+            margin: 0 0 0 15px;
+            display: flex;
+            justify-content:  flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            li{
+                flex: 0 1 50%;
+                font-size: 14px;
+                line-height: 1.43;
+                letter-spacing: normal;
+                color: #808285;
+                @media screen and (max-width: 800px){
+                    flex: 0 1 100%;
+                }
+            }
+        }
+    }
+    .disclaimer{
+        font-size: 14px;
+        line-height: 1.43;
+        letter-spacing: normal;
+        color: #808285;
+        text-align: center;
+        a{
+            color:#1d204f;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        &.distance{
+            margin: 30px 0;
+            @media screen and (max-width: 800px){
+                margin: 20px 0;
+            }
+        }
+    }
+    .g-recaptcha{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #FormField_12 > label {
+        &:after{
+            content: '*';
+            display: inline-block;
+        }
+        small{
+            display: none;
+        }
+    }
+    .form:not(.login-form)  .form-field{
+        width: 50%;
+        clear: none;
+        float: left;
+        &:nth-child(3n+1){
+            width: 100%;
+        }
+        @media screen and (max-width:  800px){
+            width: 100%;
+        }
+    }
+}
