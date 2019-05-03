@@ -3,12 +3,12 @@
         <div class="mainImg shave">
             <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/gil/menu_howto.png'}}" alt="Menu How To" title="Menu How To">
         </div>
-        <div class="title">Shave</div>
+        <div class="title">Razors</div>
     </div>
     <ul class="productGrid">
         {{#each products as |result key|}}
             {{#each custom_fields}}
-                {{#if name '==' 'Shave'}}
+                {{#if name '==' 'Razors'}}
                     <li class="product">
                             {{>components/common/custom/card product=result settings=../settings show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
                     </li>

@@ -11,16 +11,14 @@ export default class HeaderScripts extends PageManager {
         const $mobileMenuToggle = $('.mobileMenu-toggle');
         const $mobileSearch = $('.mSearch > a');
         const $desktopHeader = $('button.dropbtn');
-        // $dropbtn.mouseenter((e) => {
-        //     $(e.currentTarget).addClass('blue');
-        //     $mainHeader.removeClass('blue');
-        // }).mouseleave((e) => {
-        //     $(e.currentTarget).removeClass('blue');
-        //     $mainHeader.addClass('blue');
-        // });
-        // $dropbtn.toggleClass(() => {
-        //     return
-        // });
+        const $ul = $('.menu.vertical.medium-horizontal');
+        $(document).on('click', (e) => {
+            if ($ul.has(e.target).length === 0 && !$ul.is(e.target)) {
+                $dropbtn.removeClass('hover blue');
+                $mainHeader.addClass('blue');
+                $searchDropdown.removeClass('hover');
+            }
+        });
         $mobileDropBtn.on('click', (e) => {
             $mobileDropBtn.each((idx, val) => {
                 if (val !== e.currentTarget) {
@@ -49,27 +47,27 @@ export default class HeaderScripts extends PageManager {
                 });
             }
         });
-        $searchDropdown.mouseenter(() => {
-            $searchDropdown.addClass('hover');
-            $mainHeader.removeClass('blue');
-            $('a.navUser-action--quickSearch').click();
-        }).mouseleave(() => {
-            $searchDropdown.removeClass('hover');
-            $mainHeader.addClass('blue');
-            $('a.navUser-action--quickSearch').click();
-        });
-        // $('.search > a').on('click', (e) => {
-        //     e.preventDefault();
-        //     if ($(e.currentTarget).hasClass('hover')) {
-        //         $(e.currentTarget).removeClass('hover');
-        //         $mainHeader.addClass('blue');
-        //         $('a.navUser-action--quickSearch').click();
-        //     } else {
-        //         $(e.currentTarget).addClass('hover');
-        //         $mainHeader.removeClass('blue');
-        //         $('a.navUser-action--quickSearch').click();
-        //     }
+        // $searchDropdown.mouseenter(() => {
+        //     $searchDropdown.addClass('hover');
+        //     $mainHeader.removeClass('blue');
+        //     $('a.navUser-action--quickSearch').click();
+        // }).mouseleave(() => {
+        //     $searchDropdown.removeClass('hover');
+        //     $mainHeader.addClass('blue');
+        //     $('a.navUser-action--quickSearch').click();
         // });
+        $searchDropdown.on('click', () => {
+            if ($searchDropdown.hasClass('hover')) {
+                $searchDropdown.removeClass('hover');
+                $mainHeader.addClass('blue');
+                $('.dropdown.dropdown--quickSearch').removeClass('is-open f-open-dropdown');
+            } else {
+                $dropbtn.removeClass('hover blue');
+                $searchDropdown.addClass('hover');
+                $mainHeader.removeClass('blue');
+                $('.dropdown.dropdown--quickSearch').addClass('is-open f-open-dropdown');
+            }
+        });
         $mobileSearch.on('click', (e) => {
             e.preventDefault();
             $mainHeader.removeClass('blue-mobile');
@@ -92,6 +90,7 @@ export default class HeaderScripts extends PageManager {
                 $currentHeaderTabParent.removeClass('blue');
                 $mainHeader.addClass('blue');
             } else {
+                $searchDropdown.removeClass('hover');
                 $dropbtn.removeClass('hover blue');
                 $currentHeaderTabParent.addClass('hover');
                 $currentHeaderTabParent.addClass('blue');

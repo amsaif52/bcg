@@ -591,7 +591,7 @@
                 background-color: #f9f9f9;
             }
         }
-        &.Shave{
+        &.Razors{
             border: 1px solid #00abbc;
             .name{
                 color: #00abbc;
@@ -669,7 +669,7 @@
                     }
                 }
             }
-            &.Shave{
+            &.Razors{
                 li.navList-item a.navList-action{
                     &:before{
                         background-color: transparent;
